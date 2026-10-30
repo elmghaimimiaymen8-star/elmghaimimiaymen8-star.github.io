@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Aymen El Mghaimimi — Electronics and Electrical Engineering student at Toulouse INP–ENSEEIHT, 3EA. Completed projects, planned explorations and technical interests." name="description"/>
+<title>Aymen El Mghaimimi | Engineering Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:#07101d;
+  --bg-soft:#0b1727;
+  --panel:#0e1c2e;
+  --panel-light:#12243a;
+  --text:#eaf3ff;
+  --muted:#9aacc2;
+  --cyan:#58d9ff;
+  --blue:#578bff;
+  --line:rgba(117,184,224,.17);
+  --green:#7ce5bd;
+  --max-width:1160px
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:90px
+}
+
+body {
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden
+}
+
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background-image:linear-gradient(rgba(88,217,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(88,217,255,.025) 1px,transparent 1px);
+  background-size:44px 44px
+}
+
+a {
+  color:inherit;
+  text-decoration:none
+}
+
+button,a {
+  -webkit-tap-highlight-color:transparent
+}
+
+button {
+  font:inherit
+}
+
+.container {
+  width:min(var(--max-width),calc(100% - 48px));
+  margin-inline:auto
+}
+
+.eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--cyan);
+  font-family:"DM Mono",monospace;
+  font-size:.76rem;
+  letter-spacing:.11em;
+  text-transform:uppercase
+}
+
+.eyebrow:before {
+  content:"";
+  width:22px;
+  height:1px;
+  background:var(--cyan)
+}
+
+h1,h2,h3 {
+  line-height:1.15;
+  letter-spacing:-.035em
+}
+
+h2 {
+  font-size:clamp(2rem,4vw,3rem);
+  margin:14px 0 20px
+}
+
+h3 {
+  font-size:1.18rem;
+  margin-bottom:12px
+}
+
+p {
+  color:var(--muted)
+}
+
+.section {
+  padding:100px 0;
+  position:relative
+}
+
+.section-heading {
+  max-width:720px;
+  margin-bottom:44px
+}
+
+.section-heading p {
+  max-width:680px
+}
+
+.accent {
+  color:var(--cyan)
+}
+
+.navbar {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(7,16,29,.88);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line)
+}
+
+.nav-inner {
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px
+}
+
+.brand {
+  font-weight:800;
+  font-size:1rem;
+  letter-spacing:-.03em;
+  white-space:nowrap
+}
+
+.brand span {
+  color:var(--cyan)
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:24px
+}
+
+.nav-links a {
+  font-size:.83rem;
+  color:var(--muted);
+  transition:color .2s
+}
+
+.nav-links a:hover {
+  color:var(--cyan)
+}
+
+.nav-contact {
+  border:1px solid rgba(88,217,255,.45);
+  padding:9px 15px;
+  border-radius:6px;
+  color:var(--cyan)!important
+}
+
+.menu-toggle {
+  display:none;
+  background:transparent;
+  color:var(--text);
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:8px 12px;
+  cursor:pointer
+}
+
+.hero {
+  min-height:660px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  isolation:isolate;
+  overflow:hidden;
+  border-bottom:1px solid var(--line)
+}
+
+.hero:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:radial-gradient(ellipse at 78% 35%,rgba(24,108,180,.2),transparent 37%),radial-gradient(ellipse at 95% 80%,rgba(48,75,185,.13),transparent 35%),linear-gradient(110deg,#07101d 10%,rgba(7,16,29,.94) 50%,rgba(7,16,29,.7))
+}
+
+.hero:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(90deg,var(--bg) 0%,rgba(7,16,29,.9) 42%,rgba(7,16,29,.3) 100%),url("assets/electronics-space-bg.jpg") center right/cover no-repeat;
+  opacity:.48
+}
+
+.hero-inner {
+  width:100%;
+  padding:90px 0;
+  position:relative
+}
+
+.hero-copy {
+  max-width:700px;
+  padding-left:40px;
+  position:relative;
+  z-index:2;
+  animation:fadeUp .9s ease both
+}
+
+.hero-decoration {
+  position:absolute;
+  right:7%;
+  top:50%;
+  width:350px;
+  height:350px;
+  transform:translateY(-50%);
+  z-index:0;
+  pointer-events:none;
+  opacity:.9
+}
+
+.hero-decoration .core {
+  position:absolute;
+  left:100px;
+  top:100px;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#d7fbff 0%,#58d9ff 18%,#1686d1 52%,rgba(15,74,140,.45) 72%,transparent 74%);
+  box-shadow:0 0 35px rgba(88,217,255,.65),0 0 85px rgba(36,143,255,.35),inset 0 0 24px rgba(255,255,255,.35);
+  animation:floating 5s ease-in-out infinite
+}
+
+.hero-decoration .orbit {
+  position:absolute;
+  left:25px;
+  top:112px;
+  width:300px;
+  height:120px;
+  border:1px solid rgba(88,217,255,.78);
+  border-radius:50%;
+  transform:rotate(30deg);
+  box-shadow:0 0 14px rgba(88,217,255,.12)
+}
+
+.hero-decoration .orbit.orbit-two {
+  left:10px;
+  top:95px;
+  width:330px;
+  height:160px;
+  transform:rotate(-35deg);
+  border-color:rgba(87,139,255,.65)
+}
+
+.hero-decoration .orbit.orbit-three {
+  left:62px;
+  top:65px;
+  width:230px;
+  height:220px;
+  transform:rotate(58deg);
+  border-color:rgba(88,217,255,.28)
+}
+
+.hero-decoration .spark {
+  position:absolute;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#baf4ff;
+  box-shadow:0 0 15px 4px rgba(88,217,255,.65)
+}
+
+.hero-decoration .spark-one {
+  top:45px;
+  right:54px
+}
+
+.hero-decoration .spark-two {
+  bottom:42px;
+  left:42px;
+  width:5px;
+  height:5px
+}
+
+.hero-decoration .spark-three {
+  top:95px;
+  left:20px;
+  width:4px;
+  height:4px
+}
+
+@keyframes floating {
+  0%,100% {
+  transform:translateY(0)
+}
+
+50% {
+  transform:translateY(-12px)
+}
+
+}
+
+.status-line {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 13px;
+  border:1px solid var(--line);
+  background:rgba(14,28,46,.68);
+  border-radius:30px;
+  margin-bottom:28px;
+  color:#c6d8ec;
+  font: .76rem "DM Mono",monospace
+}
+
+.status-dot {
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 12px rgba(124,229,189,.75)
+}
+
+.hero h1 {
+  font-size:clamp(3rem,7vw,5.8rem);
+  font-weight:800;
+  letter-spacing:-.075em;
+  line-height:.98;
+  margin-bottom:24px
+}
+
+.hero h1 span {
+  display:block;
+  color:var(--cyan)
+}
+
+.hero-subtitle {
+  color:#d2e2f5;
+  font-size:clamp(1rem,2vw,1.25rem);
+  font-weight:600;
+  margin-bottom:18px
+}
+
+.hero-description {
+  max-width:610px;
+  font-size:1rem;
+  line-height:1.85;
+  margin-bottom:30px
+}
+
+.hero-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-bottom:34px
+}
+
+.btn {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  min-height:48px;
+  padding:12px 20px;
+  border-radius:6px;
+  font-weight:700;
+  font-size:.88rem;
+  transition:transform .2s,background .2s;
+  cursor:pointer
+}
+
+.btn:hover {
+  transform:translateY(-3px)
+}
+
+.btn-primary {
+  color:#04111e;
+  background:var(--cyan);
+  border:1px solid var(--cyan)
+}
+
+.btn-primary:hover {
+  background:#8ce8ff
+}
+
+.btn-secondary {
+  border:1px solid rgba(154,172,194,.35);
+  color:var(--text);
+  background:rgba(7,16,29,.45)
+}
+
+.btn-secondary:hover {
+  background:var(--panel-light)
+}
+
+.tag-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px
+}
+
+.tag {
+  font-size:.76rem;
+  color:#c4d8ed;
+  padding:7px 11px;
+  border:1px solid rgba(117,184,224,.2);
+  background:rgba(14,28,46,.65);
+  border-radius:4px
+}
+
+.grid-2 {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px
+}
+
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px
+}
+
+.card {
+  background:linear-gradient(145deg,rgba(14,28,46,.95),rgba(9,22,37,.95));
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:26px;
+  transition:transform .25s,border-color .25s
+}
+
+.card:hover {
+  transform:translateY(-4px);
+  border-color:rgba(88,217,255,.42)
+}
+
+.card p+p {
+  margin-top:12px
+}
+
+.card-icon {
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  color:var(--cyan);
+  background:rgba(88,217,255,.08);
+  border:1px solid rgba(88,217,255,.18);
+  border-radius:8px;
+  font-size:1.25rem;
+  margin-bottom:20px
+}
+
+.timeline {
+  position:relative;
+  margin-left:8px;
+  padding-left:30px;
+  border-left:1px solid rgba(88,217,255,.3)
+}
+
+.timeline-item {
+  position:relative;
+  padding:0 0 34px 8px
+}
+
+.timeline-item:last-child {
+  padding-bottom:0
+}
+
+.timeline-item:before {
+  content:"";
+  position:absolute;
+  left:-37px;
+  top:6px;
+  width:11px;
+  height:11px;
+  background:var(--bg);
+  border:2px solid var(--cyan);
+  border-radius:50%;
+  box-shadow:0 0 12px rgba(88,217,255,.25)
+}
+
+.timeline-date,.meta {
+  color:var(--cyan);
+  font: .76rem "DM Mono",monospace;
+  margin-bottom:8px
+}
+
+.skill-list {
+  list-style:none;
+  display:grid;
+  gap:12px
+}
+
+.skill-list li {
+  color:var(--muted);
+  display:flex;
+  align-items:flex-start;
+  gap:10px
+}
+
+.skill-list li:before {
+  content:"▹";
+  color:var(--cyan);
+  font-weight:700
+}
+
+.feature-panel {
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:clamp(28px,5vw,52px);
+  background:radial-gradient(ellipse at 100% 0%,rgba(88,217,255,.1),transparent 40%),linear-gradient(140deg,rgba(14,28,46,.96),rgba(7,16,29,.95))
+}
+
+.feature-panel p {
+  max-width:760px
+}
+
+.feature-panel .btn {
+  margin-top:24px
+}
+
+.resource-link {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:15px;
+  color:var(--cyan);
+  font-size:.88rem
+}
+
+.resource-link:hover {
+  text-decoration:underline
+}
+
+.contact-card a {
+  color:var(--cyan);
+  overflow-wrap:anywhere
+}
+
+footer {
+  padding:28px 0;
+  border-top:1px solid var(--line);
+  background:rgba(5,12,22,.7)
+}
+
+.footer-inner {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px
+}
+
+.footer-inner p {
+  font-size:.78rem
+}
+
+.back-top {
+  color:var(--cyan);
+  font-size:.82rem
+}
+
+.reveal {
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .7s,transform .7s
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0)
+}
+
+/* Project gallery */
+
+.project-intro {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:25px
+}
+
+.project-count {
+  color:var(--muted);
+  font: .75rem "DM Mono",monospace;
+  white-space:nowrap
+}
+
+.project-filters {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:0 0 28px
+}
+
+.filter-btn {
+  border:1px solid var(--line);
+  background:rgba(14,28,46,.72);
+  color:var(--muted);
+  border-radius:30px;
+  padding:9px 14px;
+  font-size:.8rem;
+  cursor:pointer;
+  transition:.2s
+}
+
+.filter-btn:hover,.filter-btn.active {
+  color:#04111e;
+  background:var(--cyan);
+  border-color:var(--cyan)
+}
+
+.project-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px
+}
+
+.project-card {
+  padding:0;
+  overflow:hidden;
+  min-width:0;
+  display:flex;
+  flex-direction:column
+}
+
+.project-card[hidden] {
+  display:none
+}
+
+.project-visual {
+  height:175px;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#102c45,#081522);
+  isolation:isolate
+}
+
+.project-visual:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(135deg,rgba(88,217,255,.16),transparent 50%),radial-gradient(circle at 80% 20%,rgba(87,139,255,.28),transparent 40%)
+}
+
+.project-visual img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.64;
+  transition:transform .5s,opacity .3s;
+  filter:saturate(.75)
+}
+
+.project-card:hover .project-visual img {
+  transform:scale(1.06);
+  opacity:.82
+}
+
+.visual-overlay {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(7,16,29,.9),transparent 70%)
+}
+
+.visual-symbol {
+  position:absolute;
+  right:17px;
+  top:15px;
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(88,217,255,.45);
+  background:rgba(7,16,29,.72);
+  backdrop-filter:blur(8px);
+  border-radius:12px;
+  color:var(--cyan);
+  font-size:1.25rem
+}
+
+.visual-index {
+  position:absolute;
+  left:18px;
+  bottom:13px;
+  font: .73rem "DM Mono",monospace;
+  color:#d7f6ff;
+  letter-spacing:.1em
+}
+
+.project-body {
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  flex:1
+}
+
+.project-status {
+  display:inline-flex;
+  width:fit-content;
+  margin-bottom:14px;
+  padding:5px 9px;
+  border-radius:4px;
+  font: .68rem "DM Mono",monospace;
+  letter-spacing:.02em
+}
+
+.status-completed {
+  color:var(--green);
+  background:rgba(124,229,189,.09);
+  border:1px solid rgba(124,229,189,.23)
+}
+
+.status-planned {
+  color:#9bc4ff;
+  background:rgba(87,139,255,.09);
+  border:1px solid rgba(87,139,255,.25)
+}
+
+.project-body h3 {
+  margin-bottom:10px
+}
+
+.project-body p {
+  font-size:.9rem
+}
+
+.card-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:18px
+}
+
+.card-tags span,.detail-tags span {
+  color:#bfd3e9;
+  background:rgba(88,217,255,.06);
+  border:1px solid rgba(88,217,255,.12);
+  border-radius:4px;
+  padding:5px 8px;
+  font-size:.7rem
+}
+
+.project-actions {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:auto;
+  padding-top:20px
+}
+
+.explore-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:0;
+  background:transparent;
+  color:var(--cyan);
+  font-size:.83rem;
+  font-weight:700;
+  cursor:pointer;
+  padding:7px 0
+}
+
+.explore-btn:hover {
+  color:#b5f1ff
+}
+
+.mini-icons {
+  display:flex;
+  gap:6px
+}
+
+.mini-icon {
+  width:31px;
+  height:31px;
+  border:1px solid var(--line);
+  background:rgba(88,217,255,.05);
+  color:var(--muted);
+  border-radius:7px;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  transition:.2s
+}
+
+.mini-icon:hover,.mini-icon:focus-visible {
+  color:var(--cyan);
+  border-color:var(--cyan);
+  outline:none
+}
+
+.project-note {
+  margin-top:25px;
+  padding:16px 18px;
+  border-left:2px solid var(--cyan);
+  background:rgba(88,217,255,.045);
+  font-size:.9rem;
+  color:var(--muted)
+}
+
+.project-note strong {
+  color:var(--cyan)
+}
+
+.subheading {
+  margin:48px 0 18px;
+  font-size:1.35rem
+}
+
+.subheading span {
+  color:var(--muted);
+  font-size:.83rem;
+  font-weight:400;
+  letter-spacing:0
+}
+
+/* Project detail dialog */
+
+.project-dialog {
+  width:min(900px,calc(100% - 28px));
+  max-height:min(88vh,900px);
+  padding:0;
+  border:1px solid rgba(88,217,255,.28);
+  border-radius:15px;
+  background:#091625;
+  color:var(--text);
+  box-shadow:0 25px 100px rgba(0,0,0,.65);
+  overflow:auto;
+  margin:auto
+}
+
+.project-dialog::backdrop {
+  background:rgba(1,7,15,.82);
+  backdrop-filter:blur(7px)
+}
+
+.dialog-hero {
+  height:220px;
+  position:relative;
+  background:linear-gradient(120deg,#10314a,#07101d);
+  overflow:hidden
+}
+
+.dialog-hero img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.56
+}
+
+.dialog-hero:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,#091625,transparent 90%)
+}
+
+.dialog-topline {
+  position:absolute;
+  z-index:2;
+  top:16px;
+  left:20px;
+  right:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+
+.dialog-index {
+  font: .74rem "DM Mono",monospace;
+  color:#d5f5ff
+}
+
+.dialog-close {
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:50%;
+  background:rgba(7,16,29,.75);
+  color:white;
+  cursor:pointer;
+  font-size:1.2rem
+}
+
+.dialog-heading {
+  position:absolute;
+  z-index:2;
+  left:clamp(20px,4vw,38px);
+  right:25px;
+  bottom:18px
+}
+
+.dialog-heading h2 {
+  font-size:clamp(1.7rem,4vw,2.5rem);
+  margin:8px 0 0
+}
+
+.dialog-content {
+  padding:clamp(20px,4vw,38px)
+}
+
+.dialog-lead {
+  font-size:1rem;
+  color:#d5e5f6;
+  max-width:760px;
+  margin-bottom:28px
+}
+
+.detail-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px
+}
+
+.detail-panel {
+  border:1px solid var(--line);
+  background:rgba(14,28,46,.68);
+  border-radius:10px;
+  padding:20px
+}
+
+.detail-panel h3 {
+  font-size:1rem;
+  color:var(--cyan);
+  margin-bottom:12px
+}
+
+.detail-panel p,.detail-panel li {
+  font-size:.88rem;
+  color:var(--muted)
+}
+
+.detail-panel ul,.detail-panel ol {
+  padding-left:18px;
+  display:grid;
+  gap:8px
+}
+
+.detail-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px
+}
+
+.detail-full {
+  grid-column:1/-1
+}
+
+.dialog-footnote {
+  font-size:.77rem;
+  color:#8299b2;
+  margin-top:20px
+}
+
+.empty-state {
+  display:none;
+  color:var(--muted);
+  padding:30px;
+  border:1px dashed var(--line);
+  border-radius:10px
+}
+
+@keyframes fadeUp {
+  from {
+  opacity:0;
+  transform:translateY(22px)
+}
+
+to {
+  opacity:1;
+  transform:translateY(0)
+}
+
+}
+
+@media(max-width:1000px) {
+  .nav-links {
+  gap:15px
+}
+
+.nav-links a {
+  font-size:.77rem
+}
+
+.project-grid {
+  grid-template-columns:repeat(2,minmax(0,1fr))
+}
+
+.grid-3 {
+  grid-template-columns:repeat(2,minmax(0,1fr))
+}
+
+}
+
+@media(max-width:760px) {
+  .container {
+  width:min(100% - 36px,var(--max-width))
+}
+
+.section {
+  padding:74px 0
+}
+
+.nav-inner {
+  min-height:68px
+}
+
+.menu-toggle {
+  display:block
+}
+
+.nav-links {
+  display:none;
+  position:absolute;
+  left:0;
+  right:0;
+  top:68px;
+  padding:18px 24px 24px;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  background:rgba(7,16,29,.98);
+  border-bottom:1px solid var(--line)
+}
+
+.nav-links.open {
+  display:flex
+}
+
+.nav-links a {
+  padding:12px 0;
+  font-size:.9rem
+}
+
+.nav-contact {
+  text-align:center;
+  margin-top:8px
+}
+
+.hero {
+  min-height:auto
+}
+
+.hero-inner {
+  padding:78px 0 76px
+}
+
+.hero-decoration {
+  right:-95px;
+  top:42%;
+  transform:translateY(-50%) scale(.62);
+  opacity:.25
+}
+
+.hero-copy {
+  padding-left:18px;
+  padding-right:0
+}
+
+.hero h1 {
+  font-size:clamp(2.9rem,12vw,4.6rem)
+}
+
+.grid-2,.grid-3,.project-grid {
+  grid-template-columns:1fr
+}
+
+.card {
+  padding:23px
+}
+
+.project-card {
+  padding:0
+}
+
+.project-visual {
+  height:190px
+}
+
+.project-intro {
+  align-items:start;
+  flex-direction:column;
+  gap:8px
+}
+
+.detail-grid {
+  grid-template-columns:1fr
+}
+
+.detail-full {
+  grid-column:auto
+}
+
+.dialog-hero {
+  height:190px
+}
+
+.footer-inner {
+  align-items:flex-start;
+  flex-direction:column
+}
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {
+  scroll-behavior:auto!important;
+  animation-duration:.01ms!important;
+  animation-iteration-count:1!important;
+  transition-duration:.01ms!important
+}
+
+.reveal {
+  opacity:1;
+  transform:none
+}
+
+}
+
+/* Profile photo card: replace assets/profile-photo.jpg with your own portrait. */
+.photo-placeholder{min-height:260px;border:1px dashed var(--cyan);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:22px;color:var(--muted);background:rgba(88,217,255,.04);font-weight:700;letter-spacing:.08em}.photo-placeholder small{font-weight:400;letter-spacing:0;line-height:1.6}.photo-placeholder[hidden]{display:none}
+
+.hero-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px
+}
+
+.hero-copy {
+  flex:1;
+  min-width:0
+}
+
+.hero-profile {
+  position:absolute;
+  right:7%;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1;
+  width:270px;
+  padding:14px;
+  border:1px solid rgba(88,217,255,.32);
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(14,28,46,.86),rgba(7,16,29,.76));
+  box-shadow:0 18px 60px rgba(0,0,0,.28),0 0 35px rgba(88,217,255,.08);
+  backdrop-filter:blur(12px)
+}
+
+.hero-profile-image {
+  display:block;
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:12px;
+  background:linear-gradient(135deg,#102c45,#081522);
+  border:1px solid rgba(88,217,255,.18)
+}
+
+.hero-profile-caption {
+  padding:13px 5px 3px;
+  text-align:left
+}
+
+.hero-profile-caption strong {
+  display:block;
+  color:var(--text);
+  font-size:.9rem
+}
+
+.hero-profile-caption span {
+  display:block;
+  color:var(--cyan);
+  font: .68rem "DM Mono",monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-top:4px
+}
+
+.hero-decoration {
+  right:calc(7% + 35px);
+  opacity:.25
+}
+
+.project-visual img {
+  opacity:.8
+}
+
+.project-visual img.image-placeholder {
+  object-fit:contain;
+  padding:24px;
+  opacity:.95
+}
+
+@media(max-width:1000px) {
+  .hero-profile {
+  right:3%;
+  width:220px
+}
+
+.hero-profile-image {
+  height:250px
+}
+
+.hero-decoration {
+  right:2%;
+  opacity:.18
+}
+
+.hero-copy {
+  max-width:62%;
+  padding-left:24px
+}
+
+}
+
+@media(max-width:760px) {
+  .hero-inner {
+  display:block
+}
+
+.hero-copy {
+  max-width:100%;
+  padding-left:18px;
+  padding-right:0
+}
+
+.hero-profile {
+  position:relative;
+  top:auto;
+  right:auto;
+  transform:none;
+  width:min(250px,80%);
+  margin:38px auto 0
+}
+
+.hero-profile-image {
+  height:260px
+}
+
+.hero-decoration {
+  right:-95px;
+  top:42%;
+  transform:translateY(-50%) scale(.62);
+  opacity:.18
+}
+
+}
+
+.nav-controls{display:flex;align-items:center;gap:10px}.language-toggle{border:1px solid var(--line,rgba(255,255,255,.18));background:rgba(255,255,255,.04);color:inherit;border-radius:999px;padding:9px 13px;font:inherit;font-size:.8rem;font-weight:700;cursor:pointer;letter-spacing:.04em}.language-toggle:hover{border-color:var(--accent,#58d9ff);color:var(--accent,#58d9ff)}
+
+</style>
+</head>
+<body id="top">
+<header class="navbar">
+<div class="container nav-inner">
+<a class="brand" href="#top">Aymen <span>El Mghaimimi</span>
+</a>
+<div class="nav-controls"><button aria-label="Switch language" class="language-toggle" id="languageToggle" type="button">FR</button><button aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" id="menuToggle">Menu</button></div>
+<nav class="nav-links" id="navLinks">
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#career">Career</a>
+<a class="nav-contact" href="#contact">Contact</a><a href="#currently-studying">Currently studying</a><a href="#beyond-engineering">Activities</a>
+</nav>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="container hero-inner">
+<div aria-hidden="true" class="hero-decoration">
+<span class="orbit">
+</span>
+<span class="orbit orbit-two">
+</span>
+<span class="orbit orbit-three">
+</span>
+<span class="core">
+</span>
+<span class="spark spark-one">
+</span>
+<span class="spark spark-two">
+</span>
+<span class="spark spark-three">
+</span>
+</div>
+<div class="hero-copy">
+<div class="status-line">
+<span class="status-dot">
+</span>Engineering student · Toulouse, France</div>
+<h1>Exploring <span>Electronics and Electrical Engineering.</span></h1>
+<p class="hero-subtitle">Aymen El Mghaimimi · Toulouse INP–ENSEEIHT · 3EA</p>
+<p class="hero-description">I am building a strong technical foundation through engineering coursework, practical projects and continuous learning. I am interested in understanding how electronic systems, software and energy technologies work together to solve real-world problems.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#projects">Explore my projects <span aria-hidden="true">↗</span>
+</a>
+<a class="btn btn-secondary" href="#contact">Get in touch</a>
+</div>
+<div class="tag-list">
+<span class="tag">Electronics & Digital Systems</span>
+<span class="tag">Embedded Systems</span>
+<span class="tag">Electrical Energy &amp; Power systems </span>
+<span class="tag">Automation &amp; Control</span>
+<span class="tag">Signal processing&amp; Industrial Computing</span>
+</div>
+</div>
+<aside aria-label="Profile photo" class="hero-profile">
+<img alt="Portrait of Aymen El Mghaimimi" class="hero-profile-image" onerror="this.style.display='none';this.nextElementSibling.hidden=false" src="assets/profile-photo.jpg"/><div class="photo-placeholder" hidden>YOUR PHOTO<br><small>Place your image at <code>assets/profile-photo.jpg</code></small></div>
+<div class="hero-profile-caption">
+<strong>Aymen El Mghaimimi</strong>
+<span>Electrical Energy · Electronics · Engineering</span>
+</div>
+</aside>
+</div>
+</section>
+<section class="section" id="about">
+<div class="container">
+<div class="section-heading reveal">
+<span class="eyebrow">About me</span>
+<h2>Building a foundation in <span class="accent">engineering.</span>
+</h2>
+<p>I am an engineering student at Toulouse INP–ENSEEIHT, within the Electronics, Electrical Energy and Automatic Control (3EA) department. My academic background in Electrical Engineering has provided me with a solid foundation in electrical engineering, analog and digital electronics, embedded systems, control engineering and industrial computing. I am keen to further develop these skills and apply them to innovative technological solutions.</p>
+</div>
+<div class="grid-2">
+<article class="card reveal">
+<div class="card-icon">⌘</div>
+<h3>Technical curiosity</h3>
+<p>I enjoy understanding how electronic hardware, embedded software and control systems work together to create reliable engineering solutions.</p>
+</article>
+<article class="card reveal">
+<div class="card-icon">◎</div>
+<h3>Learning by building</h3>
+<p>I learn by turning concepts into working systems, testing ideas through simulation and improving designs step by step.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="education">
+<div class="container">
+<div class="section-heading reveal">
+<span class="eyebrow">Education</span>
+<h2>My academic <span class="accent">path.</span></h2>
+<p>A progression from physical sciences to electrical engineering and a broader engineering curriculum.</p>
+</div>
+<div class="timeline reveal">
+<div class="timeline-item">
+<div class="timeline-date">2026 – Present</div>
+<h3>Toulouse INP–ENSEEIHT · France</h3>
+<p>Engineering cycle. Building skills in electronics, electrical engineering, automation, computer systems, signal processing and applied mathematics.</p>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">2025 – 2026</div>
+<h3>Bachelor’s Degree in Electronics and Electrical Engineering</h3>
+<p>Faculty of Sciences Aïn Chock (FSAC), Hassan II University of Casablanca (UH2C), Morocco · EEAI (Electrical Engineering, Electronics, Automatic Control and Industrial Computing).</p>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">2023 – 2025</div>
+<h3>Faculty of Sciences Aïn Chock · UH2C, Morocco</h3>
+<p>DEUG in Physical Sciences, providing a foundation in mathematics, physics and scientific methods.</p>
+</div>
+<div class="timeline-item">
+<div class="timeline-date">2022 – 2023</div>
+<h3>Groupe scolaire Henri Matisse · Casablanca, Morocco</h3>
+<p>Scientific Baccalaureate, Physics and Chemistry.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- PROJECTS: use the filters and open each card to explore its details. -->
+<section class="section" id="projects">
+<div class="container">
+<div class="section-heading reveal">
+<span class="eyebrow">Projects</span>
+<h2>Learning through <span class="accent">building.</span></h2>
+<p>Completed work and future explorations are presented separately so that my experience and ambitions remain clear. Open a project to explore the motivation, approach and skills involved.</p>
+</div>
+<div class="project-intro reveal">
+<h3>Explore the project collection</h3>
+<span class="project-count" id="projectCount">12 PROJECTS</span>
+</div>
+<div aria-label="Filter projects" class="project-filters reveal" role="group">
+<button aria-pressed="true" class="filter-btn active" data-filter="all">All projects</button>
+<button aria-pressed="false" class="filter-btn" data-filter="completed">Completed</button>
+<button aria-pressed="false" class="filter-btn" data-filter="future">Future ideas</button>
+</div>
+<div class="project-grid" id="projectGrid">
+<article class="card project-card reveal" data-project="smart-home" data-status="completed">
+<div class="project-visual">
+<img alt="Add your own photo of the intelligent Arduino smart home project" loading="lazy" onerror="this.style.display='none'" src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">⌂</span>
+<span class="visual-index">PROJECT 01 / BUILT</span>
+</div>
+<div class="project-body">
+<span class="project-status status-completed">Completed · Prototype + simulation</span>
+<h3>Smart Home Automation</h3>
+<p>An Arduino-based home automation system combining sensors, lighting control, window operation and temperature-related functions.</p>
+<div class="card-tags">
+<span>Arduino</span>
+<span>Sensors</span>
+<span>Automation</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="smart-home">Explore project <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore smart home skills" class="mini-icon" data-jump="skills" data-open-project="smart-home" title="Skills">⌘</button>
+<button aria-label="Explore smart home approach" class="mini-icon" data-jump="approach" data-open-project="smart-home" title="Approach">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="parking" data-status="completed">
+<div class="project-visual">
+<img alt="Parking area representing an automated parking concept" loading="lazy" onerror="this.style.display='none'" src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">▤</span>
+<span class="visual-index">PROJECT 02 / SIMULATED</span>
+</div>
+<div class="project-body">
+<span class="project-status status-completed">Completed · Simulation</span>
+<h3>Automated Parking System</h3>
+<p>A simulated parking access system using an ultrasonic sensor to detect a vehicle and trigger an automated response.</p>
+<div class="card-tags">
+<span>Arduino</span>
+<span>HC-SR04</span>
+<span>Embedded</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="parking">Explore project <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore parking skills" class="mini-icon" data-jump="skills" data-open-project="parking" title="Skills">⌘</button>
+<button aria-label="Explore parking approach" class="mini-icon" data-jump="approach" data-open-project="parking" title="Approach">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="access" data-status="completed">
+<div class="project-visual">
+<img alt="Add your own PIC16F84A access-control circuit or Proteus screenshot" loading="lazy" onerror="this.style.display='none'" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">▣</span>
+<span class="visual-index">PROJECT 03 / SIMULATED</span>
+</div>
+<div class="project-body">
+<span class="project-status status-completed">Completed · Proteus simulation</span>
+<h3>Digital Code Access Control</h3>
+<p>A PIC16F84A-based access-control circuit programmed in assembly, using a four-input code sequence and red/green indicators.</p>
+<div class="card-tags">
+<span>PIC16F84A</span>
+<span>Assembly</span>
+<span>Proteus</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="access">Explore project <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore access control skills" class="mini-icon" data-jump="skills" data-open-project="access" title="Skills">⌘</button>
+<button aria-label="Explore access control approach" class="mini-icon" data-jump="approach" data-open-project="access" title="Approach">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="snake" data-status="completed">
+<div class="project-visual">
+<img alt="Video game controller and gaming setup" loading="lazy" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">⌘</span>
+<span class="visual-index">PROJECT 04 / CODED</span>
+</div>
+<div class="project-body">
+<span class="project-status status-completed">Completed · Pair project</span>
+<h3>Snake Game in C</h3>
+<p>A console game developed in a pair, with collision handling, scoring, difficulty options, obstacles and replay functionality.</p>
+<div class="card-tags">
+<span>C</span>
+<span>Algorithms</span>
+<span>Teamwork</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="snake">Explore project <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore Snake skills" class="mini-icon" data-jump="skills" data-open-project="snake" title="Skills">⌘</button>
+<button aria-label="Explore Snake approach" class="mini-icon" data-jump="approach" data-open-project="snake" title="Approach">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="student-net" data-status="completed">
+<div class="project-visual">
+<img alt="Students collaborating around a table" loading="lazy" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">◈</span>
+<span class="visual-index">PROJECT 05 / TEAM</span>
+</div>
+<div class="project-body">
+<span class="project-status status-completed">Completed · Team project</span>
+<h3>Student NET</h3>
+<p>A student community platform concept focused on academic and career opportunities, productivity and peer support.</p>
+<div class="card-tags">
+<span>Product thinking</span>
+<span>Teamwork</span>
+<span>Student life</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="student-net">Explore project <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore Student NET skills" class="mini-icon" data-jump="skills" data-open-project="student-net" title="Skills">⌘</button>
+<button aria-label="Explore Student NET approach" class="mini-icon" data-jump="approach" data-open-project="student-net" title="Approach">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="visionspin" data-status="future">
+<div class="project-visual">
+<img alt="Electronics circuit board representing an LED display project" loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">✳</span>
+<span class="visual-index">FUTURE IDEA 01</span>
+</div>
+<div class="project-body">
+<span class="project-status status-planned">Planned project</span>
+<h3>VisionSpin</h3>
+<p>A rotating LED display that creates floating text and simple animations using precise timing and position synchronisation.</p>
+<div class="card-tags">
+<span>C/C++</span>
+<span>Timers</span>
+<span>Motor control</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="visionspin">Explore idea <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore VisionSpin skills" class="mini-icon" data-jump="skills" data-open-project="visionspin" title="Skills">⌘</button>
+<button aria-label="Explore VisionSpin plan" class="mini-icon" data-jump="approach" data-open-project="visionspin" title="Plan">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="biogrip" data-status="future">
+<div class="project-visual">
+<img alt="Engineering laboratory equipment" loading="lazy" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">✋</span>
+<span class="visual-index">FUTURE IDEA 02</span>
+</div>
+<div class="project-body">
+<span class="project-status status-planned">Planned project</span>
+<h3>BioGrip</h3>
+<p>A simple robotic hand controlled by muscle activity measured with a surface EMG sensor.</p>
+<div class="card-tags">
+<span>EMG</span>
+<span>Signal processing</span>
+<span>Servos</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="biogrip">Explore idea <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore BioGrip skills" class="mini-icon" data-jump="skills" data-open-project="biogrip" title="Skills">⌘</button>
+<button aria-label="Explore BioGrip plan" class="mini-icon" data-jump="approach" data-open-project="biogrip" title="Plan">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="orbitlisten" data-status="future">
+<div class="project-visual">
+<img alt="Earth viewed from space" loading="lazy" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">⌁</span>
+<span class="visual-index">FUTURE IDEA 03</span>
+</div>
+<div class="project-body">
+<span class="project-status status-planned">Planned project</span>
+<h3>OrbitListen</h3>
+<p>A small SDR reception setup for exploring real radio signals, viewing their spectrum and learning about satellite communications.</p>
+<div class="card-tags">
+<span>SDR</span>
+<span>GNU Radio</span>
+<span>DSP</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="orbitlisten">Explore idea <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore OrbitListen skills" class="mini-icon" data-jump="skills" data-open-project="orbitlisten" title="Skills">⌘</button>
+<button aria-label="Explore OrbitListen plan" class="mini-icon" data-jump="approach" data-open-project="orbitlisten" title="Plan">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="chargesense" data-status="future">
+<div class="project-visual">
+<img alt="Electrical engineering measurements and equipment" loading="lazy" src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">ϟ</span>
+<span class="visual-index">FUTURE IDEA 04</span>
+</div>
+<div class="project-body">
+<span class="project-status status-planned">Planned project</span>
+<h3>ChargeSense</h3>
+<p>An experimental system that recognises operating states of a low-voltage device from its electrical measurements.</p>
+<div class="card-tags">
+<span>Current sensing</span>
+<span>ADC</span>
+<span>Classification</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="chargesense">Explore idea <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore ChargeSense skills" class="mini-icon" data-jump="skills" data-open-project="chargesense" title="Skills">⌘</button>
+<button aria-label="Explore ChargeSense plan" class="mini-icon" data-jump="approach" data-open-project="chargesense" title="Plan">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="pipeear" data-status="future">
+<div class="project-visual">
+<img alt="Industrial pipes and infrastructure" loading="lazy" src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">≋</span>
+<span class="visual-index">FUTURE IDEA 05</span>
+</div>
+<div class="project-body">
+<span class="project-status status-planned">Planned project</span>
+<h3>PipeEar</h3>
+<p>A small test bench to investigate whether pipe vibrations can help distinguish normal flow from a controlled leak.</p>
+<div class="card-tags">
+<span>Vibration sensors</span>
+<span>FFT</span>
+<span>Acoustics</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="pipeear">Explore idea <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore PipeEar skills" class="mini-icon" data-jump="skills" data-open-project="pipeear" title="Skills">⌘</button>
+<button aria-label="Explore PipeEar plan" class="mini-icon" data-jump="approach" data-open-project="pipeear" title="Plan">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="wattwise" data-status="future">
+<div class="project-visual">
+<img alt="Electricity pylons at dusk" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&amp;fit=crop&amp;w=900&amp;q=80'" src="https://images.unsplash.com/photo-1473341304170-971055b5b3e4?auto=format&amp;fit=crop&amp;w=900&amp;q=80"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">↗</span>
+<span class="visual-index">FUTURE IDEA 06</span>
+</div>
+<div class="project-body">
+<span class="project-status status-planned">Planned project</span>
+<h3>WattWise</h3>
+<p>An energy-monitoring setup to measure or estimate consumption, compare operating conditions and visualise energy use over time.</p>
+<div class="card-tags">
+<span>Power</span>
+<span>Measurement</span>
+<span>Data analysis</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="wattwise">Explore idea <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore WattWise skills" class="mini-icon" data-jump="skills" data-open-project="wattwise" title="Skills">⌘</button>
+<button aria-label="Explore WattWise plan" class="mini-icon" data-jump="approach" data-open-project="wattwise" title="Plan">⚙</button>
+</div>
+</div>
+</div>
+</article>
+<article class="card project-card reveal" data-project="linebot" data-status="future">
+<div class="project-visual">
+<img alt="Line-following robot car with wheels and infrared line sensors" loading="lazy" onerror="this.style.display=\'none\'" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<div class="visual-overlay">
+</div>
+<span aria-hidden="true" class="visual-symbol">⌖</span>
+<span class="visual-index">FUTURE IDEA 07</span>
+</div>
+<div class="project-body">
+<span class="project-status status-planned">Planned project</span>
+<h3>Line-Following Robot</h3>
+<p>A small mobile robot that follows a track using infrared sensors, with a goal of improving speed and tracking through feedback control.</p>
+<div class="card-tags">
+<span>Embedded C</span>
+<span>PWM</span>
+<span>PID control</span>
+</div>
+<div class="project-actions">
+<button class="explore-btn" data-open-project="linebot">Explore idea <span>↗</span>
+</button>
+<div class="mini-icons">
+<button aria-label="Explore line follower skills" class="mini-icon" data-jump="skills" data-open-project="linebot" title="Skills">⌘</button>
+<button aria-label="Explore line follower plan" class="mini-icon" data-jump="approach" data-open-project="linebot" title="Plan">⚙</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<p class="empty-state" id="emptyState">No projects match this filter.</p>
+<div class="project-note reveal">
+<strong>Keeping it honest:</strong> completed projects describe previous work; future projects are ideas I would like to explore. Their designs, components and methods may evolve as I learn and test what is feasible.</div>
+</div>
+</section>
+<section class="section" id="skills">
+<div class="container">
+<div class="section-heading reveal">
+<span class="eyebrow">Technical toolkit</span>
+<h2>Skills &amp; tools <span ></span>
+</h2>
+<p>Skills built through my previous degree, technical training and projects, alongside new foundations I am developing at ENSEEIHT.</p>
+</div>
+<div class="grid-3">
+<article class="card reveal">
+<div class="card-icon">ϟ</div>
+<h3>Electrotechnics &amp; Electrical Systems</h3>
+<ul class="skill-list">
+<li>Electrical networks and power distribution fundamentals</li>
+<li>Electrical equipment and protection apparatus</li>
+<li>Electrical energy and circuit analysis</li>
+<li>Industrial electrical installations</li>
+</ul>
+</article>
+<article class="card reveal">
+<div class="card-icon">⌁</div>
+<h3>Electronics &amp; Embedded Systems</h3>
+<ul class="skill-list">
+<li>Analog and digital electronics</li>
+<li>Arduino prototyping, sensors and microcontrollers</li>
+<li>Digital logic fundamentals</li>
+<li>Electronic circuits and instrumentation</li>
+</ul>
+</article>
+<article class="card reveal">
+<div class="card-icon">∿</div>
+<h3>Automatic Control &amp; Signal Processing</h3>
+<ul class="skill-list">
+<li>Automatic control and system modelling</li>
+<li>Signal processing fundamentals</li>
+<li>Industrial automation and control logic</li>
+<li>Measurement, analysis and technical problem-solving</li>
+</ul>
+</article>
+<article class="card reveal">
+<div class="card-icon">⌘</div>
+<h3>Programming &amp; Industrial Computing</h3>
+<ul class="skill-list">
+<li>C programming and Python</li>
+<li>PIC assembly language</li>
+<li>Ladder logic, STEP 7 and Automgen</li>
+<li>Computer networks and industrial communication fundamentals</li>
+</ul>
+</article>
+<article class="card reveal">
+<div class="card-icon">▦</div>
+<h3>Simulation &amp; Engineering Tools</h3>
+<ul class="skill-list">
+<li>MATLAB / Simulink</li>
+<li>Proteus, Tinkercad and Fritzing</li>
+<li>Cisco Packet Tracer</li>
+<li>Arduino IDE and embedded prototyping tools</li>
+</ul>
+</article>
+</div>
+<div class="grid-2" style="margin-top:22px">
+<article class="card reveal">
+<h3>Languages</h3>
+<ul class="skill-list">
+<li>Arabic — native language</li>
+<li>French — C1 certified (TCF TP, December 2025)</li>
+<li>English — intermediate</li>
+<li>German — beginner; currently learning at ENSEEIHT (LV2)</li>
+</ul>
+</article>
+<article class="card reveal">
+<h3>Working approach</h3>
+<ul class="skill-list">
+<li>Analytical and structured problem-solving</li>
+<li>Learning through practical experimentation</li>
+<li>Teamwork on academic projects</li>
+<li>Continuous improvement and technical curiosity</li>
+</ul>
+</article>
+</div>
+</div>
+</section><section class="section" id="currently-studying"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Currently studying</span><h2>Skills I am <span class="accent">developing.</span></h2><p>These areas reflect my current engineering curriculum, not a claim of advanced professional expertise.</p></div><div class="grid-2"><article class="card reveal"><h3>Digital Systems, FPGA and VHDL</h3><p>VHDL and digital hardware description, alongside combinational and sequential logic and computer architecture, as part of my current ENSEEIHT curriculum.</p></article><article class="card reveal"><h3>Circuits, Electronics and Electrical Energy</h3><p>Circuit analysis, measurements, electronic components, semiconductor fundamentals and power-electronics concepts.</p></article><article class="card reveal"><h3>Signals, Systems and Control</h3><p>Signal processing, continuous-time linear systems, system modelling and introductory control methods.</p></article><article class="card reveal"><h3>Mathematical and Numerical Methods</h3><p>Complex analysis, probability, statistics, numerical analysis, optimisation and differential equations.</p></article><article class="card reveal"><h3>Engineering Practice and Communication</h3><p>Technical communication, collaborative project work, structured problem-solving and an introduction to management methods.</p></article></div></div></section>
+<section class="section" id="interests">
+<div class="container">
+<div class="section-heading reveal">
+<span class="eyebrow">Areas of interest</span>
+<h2>Where I want to <span class="accent">go deeper.</span>
+</h2>
+<p>Technical fields I would like to explore through courses, projects, internships and professional experience.</p>
+</div>
+<div class="grid-3">
+<article class="card reveal">
+<div class="card-icon">◉</div>
+<h3>Embedded Systems</h3>
+<p>Hardware-software integration, microcontrollers, firmware and reliable embedded applications.</p>
+</article>
+<article class="card reveal">
+<div class="card-icon">ϟ</div>
+<h3>Electronics &amp; FPGA</h3>
+<p>Electronic architectures, digital design, programmable logic and hardware implementation.</p>
+</article>
+<article class="card reveal">
+<div class="card-icon">✦</div>
+<h3>Space Technologies</h3>
+<p>Satellite systems, aerospace electronics, onboard equipment and communication technologies.</p>
+</article>
+<article class="card reveal">
+<div class="card-icon">⌖</div>
+<h3>Automation &amp; Robotics</h3>
+<p>Control systems, sensing, modelling and the interaction between physical systems and software.</p>
+</article>
+<article class="card reveal">
+<div class="card-icon">∿</div>
+<h3>Signal Processing</h3>
+<p>Mathematical tools and algorithms for analysing and processing signals in engineering applications.</p>
+</article>
+<article class="card reveal">
+<div class="card-icon">↗</div>
+<h3>Technical Leadership</h3>
+<p>In the longer term, I would like to combine technical expertise with project coordination and engineering management.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="career">
+<div class="container">
+<div class="feature-panel reveal">
+<span class="eyebrow">Career direction</span>
+<h2>From engineering foundations to <span class="accent">technical leadership.</span>
+</h2>
+<p>My priority is to build solid technical expertise, contribute to meaningful engineering projects and gain industry experience, initially in France. Over time, I aim to take on greater responsibilities at the intersection of technology, project coordination and engineering management.</p>
+<a class="btn btn-primary" href="#contact">Let's connect <span>↗</span>
+</a>
+</div>
+</div>
+</section>
+<section class="section" id="beyond-engineering"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Beyond engineering</span><h2>Learning through people and <span class="accent">experiences.</span></h2><p>Activities and interests that help me develop creativity, collaboration and a balanced approach to student life.</p></div><div class="grid-2"><article class="card reveal"><div class="card-icon">文</div><h3>Languages</h3><p>Arabic — native. French — C1 certified (TCF TP, December 2025). English — intermediate and developing technical fluency. German — beginner, currently learning at ENSEEIHT (LV2).</p></article><article class="card reveal"><div class="card-icon">◉</div><h3>Club Photo7</h3><p>Photography, visual creativity and learning to communicate through images.</p></article><article class="card reveal"><div class="card-icon">♫</div><h3>Club Zik</h3><p>Music and an opportunity to explore guitar and creative collaboration.</p></article><article class="card reveal"><div class="card-icon">↗</div><h3>Sport and wellbeing</h3><p>Interested in football and swimming, and gradually improving fitness through regular practice.</p></article></div></div></section><section class="section" id="resources">
+<div class="container">
+<div class="section-heading reveal">
+<span class="eyebrow">Explore my profile</span>
+<h2>Connect and <span class="accent">learn more.</span>
+</h2>
+<p>For professional updates or further information about my background, you can reach me through the links below.</p>
+</div>
+<div class="grid-2">
+<article class="card reveal">
+<div class="card-icon">in</div>
+<h3>LinkedIn</h3>
+<p>Connect with me and follow my academic and professional journey.</p>
+<a class="resource-link" href="https://www.linkedin.com/in/aymen-el-mghaimimi-614394378/" rel="noopener noreferrer" target="_blank">Visit my LinkedIn ↗</a>
+</article>
+<article class="card reveal">
+<div class="card-icon">✉</div>
+
+<h3>Curriculum Vitae</h3>
+<p>Choose your preferred CV version.</p>
+
+<div class="hero-actions" style="margin-top:14px; flex-wrap:wrap;">
+
+  <a class="resource-link"
+     href="documents/CV_Aymen_FR.pdf"
+     target="_blank"
+     rel="noopener noreferrer">
+     CV Français ↗
+  </a>
+
+  <a class="resource-link"
+     href="documents/CV_Aymen_EN.pdf"
+     target="_blank"
+     rel="noopener noreferrer">
+     CV English ↗
+  </a>
+
+</div>
+</article>
+</div>
+</div>
+
+</div>
+</section>
+<section class="section" id="contact">
+<div class="container">
+<div class="section-heading reveal">
+<span class="eyebrow">Contact</span>
+<h2>Let's start a <span class="accent">conversation.</span>
+</h2>
+<p>I am open to connecting with engineering students, professionals and people working in fields related to my technical interests.</p>
+</div>
+<div class="grid-2">
+<article class="card contact-card reveal">
+<div class="card-icon">✉</div>
+<h3>Email</h3>
+<p>The best way to contact me directly.</p>
+<a class="resource-link" href="mailto:elmghaimimiaymen8@gmail.com">elmghaimimiaymen8@gmail.com ↗</a>
+</article>
+<article class="card contact-card reveal">
+<div class="card-icon">in</div>
+<h3>LinkedIn</h3>
+<p>For professional networking and career discussions.</p>
+<a class="resource-link" href="https://www.linkedin.com/in/aymen-el-mghaimimi-614394378/" rel="noopener noreferrer" target="_blank">Connect on LinkedIn ↗</a>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-inner">
+<p>© <span id="currentYear">
+</span> Aymen El Mghaimimi · Engineering Portfolio</p>
+<a class="back-top" href="#top">Back to top ↑</a>
+</div>
+</footer>
+<dialog aria-labelledby="dialogTitle" class="project-dialog" id="projectDialog">
+<div class="dialog-hero">
+<img alt="" id="dialogImage" src=""/>
+<div class="dialog-topline">
+<span class="dialog-index" id="dialogIndex">PROJECT DETAILS</span>
+<button aria-label="Close project details" class="dialog-close" id="dialogClose">×</button>
+</div>
+<div class="dialog-heading">
+<span class="project-status" id="dialogStatus">
+</span>
+<h2 id="dialogTitle">Project title</h2>
+</div>
+</div>
+<div class="dialog-content">
+<p class="dialog-lead" id="dialogLead">
+</p>
+<div class="detail-grid">
+<section class="detail-panel">
+<h3 id="dialogWhyHeading">✦ Why this project?</h3>
+<p id="dialogWhy">
+</p>
+</section>
+<section class="detail-panel">
+<h3 id="dialogSkillsHeading">⌘ Skills developed</h3>
+<div class="detail-tags" id="dialogSkills">
+</div>
+</section>
+<section class="detail-panel detail-full">
+<h3 id="dialogApproachHeading">⚙ My approach</h3>
+<ol id="dialogApproach">
+</ol>
+</section>
+<section class="detail-panel detail-full">
+<h3 id="dialogLearningHeading">◎ What I learned</h3>
+<p id="dialogLearning">
+</p>
+</section>
+</div>
+<p class="dialog-footnote" id="dialogNote">
+</p>
+</div>
+</dialog>
+<script>
+document.getElementById('currentYear').textContent=new Date().getFullYear();
+  
+const menuToggle=document.getElementById('menuToggle'),navLinks=document.getElementById('navLinks');
+  
+menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded',String(open));
+  menuToggle.textContent=open?'Close':'Menu'});
+  
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded','false');
+  menuToggle.textContent='Menu'}));
+  
+const revealElements=document.querySelectorAll('.reveal');
+  if('IntersectionObserver'in window){const observer=new IntersectionObserver((entries,obs)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');
+  obs.unobserve(e.target)}}),{threshold:.1});
+  revealElements.forEach(el=>observer.observe(el))}else revealElements.forEach(el=>el.classList.add('visible'));
+  
+const projectDetails={
+'smart-home':{index:'PROJECT 01 · COMPLETED',status:'Completed · Prototype + simulation',title:'Smart Home Automation',image:'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=85',lead:'An Arduino-based home automation project bringing together sensors, simple control logic and outputs in one system. The prototype was built and tested, with a Tinkercad simulation used during development.',why:'I wanted to see how several inputs can work together to automate parts of a home. It was a useful way to connect basic electronics with programming and practical system behaviour.',skills:['Arduino UNO','PIR sensor','LDR','DHT11 / temperature input','LCD and buzzer','Servo / relay control'],approach:['Connect the sensors and outputs to the Arduino and check each component separately.','Write the control logic for presence, light and temperature-related functions.','Integrate the outputs and user feedback, then test different input conditions.','Compare the physical setup with the simulation and correct issues found during testing.'],learning:'How to integrate several sensors and actuators, organise embedded code, debug hardware connections and test a complete system rather than isolated components.',note:'Completed work. The temperature sensor used in the simulation may differ from the physical component; describe the version actually shown in your project.'},
+'parking':{index:'PROJECT 02 · COMPLETED',status:'Completed · Simulation',title:'Automated Parking System',image:'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85',lead:'A simulated parking access system using an HC-SR04 ultrasonic sensor to detect a vehicle and trigger the programmed response.',why:'I chose this project to practise reading a sensor and using its measurements to make a simple automated decision. It was a first step towards systems that interact with their environment.',skills:['Arduino','HC-SR04 ultrasonic sensor','Distance measurement','Conditional logic','Proteus / simulation workflow'],approach:['Set up the sensor and microcontroller in the simulation.','Read the measured distance and choose a detection threshold.','Implement and test the response when a vehicle is detected or moves away.','Check the behaviour across different simulated distances.'],learning:'How distance sensing works, how thresholds affect detection, and why a system should be tested under more than one condition.',note:'This project was simulated;    it should not be presented as a completed physical prototype.'},
+'access':{index:'PROJECT 03 · COMPLETED',status:'Completed · Proteus simulation',title:'Digital Code Access Control',image:'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',lead:'A digital access-control circuit based on a PIC16F84A, programmed in assembly and tested in Proteus. The design checks a four-input secret sequence and uses red and green LEDs to indicate the result.',why:'This project gave me a chance to work closer to the microcontroller level and understand how a small digital system follows a sequence of inputs and responds to them.',skills:['PIC16F84A','Assembly language','Digital logic','Proteus','Input/output handling'],approach:['Design the input sequence and define what counts as a correct code.','Write the PIC assembly program to read inputs and evaluate the sequence.','Connect the indicator outputs and simulate correct and incorrect attempts.','Debug the logic by checking the program state and output behaviour.'],learning:'How assembly instructions, input/output pins and digital decision logic come together in a small embedded control application.',note:'Completed in simulation;    do not imply that a physical access-control device was built.'},
+'snake':{index:'PROJECT 04 · COMPLETED',status:'Completed · Pair project',title:'Snake Game in C',image:'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=85',lead:'A console-based Snake game developed in a pair using C and Code::Blocks, with collision handling, score tracking, replay, speed/difficulty options and obstacles.',why:'It was a practical way to improve my programming foundations and learn to break a larger task into smaller functions that can be tested and maintained.',skills:['C programming','Functions and modular code','Arrays and pointers','Debugging','Teamwork'],approach:['Plan the game loop, snake movement and rules.','Separate key tasks into functions and organise the source files.','Implement collisions, scoring, obstacles and difficulty options.','Test edge cases and fix issues during play.'],learning:'How to organise a program into manageable parts, work with arrays and pointers, debug logic and coordinate implementation with a teammate.',note:'Pair project. This description focuses on the implemented features and does not imply work that was not part of the project.'},
+'student-net':{index:'PROJECT 05 · COMPLETED',status:'Completed · Team project',title:'Student NET',image:'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85',lead:'A team project centred on a student community platform for academic and professional opportunities, productivity and peer support.',why:'I was interested in thinking about a real student need and how a digital product could bring useful services together. My contribution focused on the concept and product thinking rather than claiming that I personally coded the application.',skills:['Product thinking','Needs identification','Team collaboration','Feature planning','Communication'],approach:['Identify student challenges the platform could address.','Discuss possible features around community, opportunities and productivity.','Work with the team to shape the concept and its user-facing value.','Review the proposed experience and how the platform could be improved.'],learning:'How to define a digital product around user needs, contribute to a team project and communicate an idea clearly alongside technical contributors.',note:'Team project. Keep the description of your personal contribution accurate;    do not claim to have implemented code you did not write.'},
+'visionspin':{index:'FUTURE IDEA 01 · PLANNED',status:'Planned project',title:'VisionSpin',image:'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',lead:'I would like to build a rotating LED display that can show text and simple animations by synchronising light patterns with the rotation.',why:'I like the idea of making something visually striking while having real engineering problems to solve behind it: timing, speed measurement, synchronisation and motor control.',skills:['C/C++','Arduino or STM32','Timers and interrupts','Hall-effect sensor','LED driving','Motor control'],approach:['Build a small LED assembly and make the microcontroller display a fixed pattern.','Add a position sensor and synchronise the pattern with each rotation.','Measure rotational speed and adjust timing as the speed changes.','Test the image stability and add user-selectable text or simple animations.'],learning:'How precise timing and sensor feedback affect a physical display, and how to measure and improve its stability. I would aim for a guarded, balanced rotor and a modest first version before adding complexity.',note:'Future idea. Components, cost and mechanical design will be confirmed after checking feasibility.'},
+'biogrip':{index:'FUTURE IDEA 02 · PLANNED',status:'Planned project',title:'BioGrip',image:'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85',lead:'I would like to make a simple robotic hand whose fingers respond to muscle activity measured with a surface EMG sensor on the forearm.',why:'This project brings together electronics, signals and robotics. I am especially interested in the step between measuring a noisy biological signal and turning it into a controlled movement.',skills:['Surface EMG module','Analog signal conditioning','Filtering and envelope detection','ADC','C/C++','Servomotors'],approach:['Build a basic articulated hand with a few servo-driven fingers.','Acquire EMG data using a module designed for surface measurements.','Filter the signal and calibrate it for rest and different contraction levels.','Map the measured activity to gradual hand movement, then test response and repeatability.'],learning:'How to handle noisy sensor signals, calibrate a measurement and turn it into a useful command. I would keep the prototype low-voltage and experimental, not a medical device.',note:'Future idea. Use an EMG module designed for safe surface measurement;    no direct connection to mains-powered equipment.'},
+'orbitlisten':{index:'FUTURE IDEA 03 · PLANNED',status:'Planned project',title:'OrbitListen',image:'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=85',lead:'I would like to set up a small Software-Defined Radio receiver to observe real radio signals, explore their spectrum and, if feasible, receive suitable satellite signals.',why:'Space and satellite communications interest me, and this project offers a way to connect that interest with practical radio measurements and digital signal processing.',skills:['RTL-SDR or similar receiver','Antenna basics','Radio-frequency fundamentals','GNU Radio','Python / NumPy / SciPy','FFT and spectrograms'],approach:['Choose an affordable SDR and an antenna suited to a legal, accessible frequency band.','Install receiver software and learn to adjust frequency, gain and bandwidth.','Record signals and inspect spectra and spectrograms.','Explore filtering or demodulation, then attempt a suitable satellite reception if practical.'],learning:'How real-world signals differ from ideal examples, how reception settings affect data, and how digital processing helps reveal signal characteristics.',note:'Future idea. Only receive and decode signals that are lawful and appropriate to access;    a satellite link is an extension, not a guaranteed first milestone.'},
+'chargesense':{index:'FUTURE IDEA 04 · PLANNED',status:'Planned project',title:'ChargeSense',image:'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&q=85',lead:'I would like to identify the operating state of a low-voltage device by analysing its electrical signature, for example its current draw during different modes.',why:'It is a practical instrumentation problem: instead of looking at a single reading, I want to see whether patterns in measurements can reveal what a device is doing.',skills:['Current and voltage sensing','Analog signal conditioning','ADC and sampling','Feature extraction','C/C++','Python or MATLAB'],approach:['Start with a low-voltage load such as a small DC motor.','Collect current measurements during several known operating states.','Calculate simple features such as average, variation and transient peaks.','Develop a basic classifier and test how often it identifies each state correctly.'],learning:'How to collect reliable measurements, select useful signal features and evaluate a simple classifier using real test data.',note:'Future idea. Start with low-voltage equipment. Any later mains-powered measurement would require suitable certified, isolated equipment.'},
+'pipeear':{index:'FUTURE IDEA 05 · PLANNED',status:'Planned project',title:'PipeEar',image:'https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1200&q=85',lead:'I would like to test whether vibrations recorded on a small pipe can help distinguish normal water flow from a controlled leak in a simple laboratory setup.',why:'I find it interesting to use a sensor to investigate something that cannot be judged reliably by sight alone. It also offers a hands-on way to explore acoustics and signal analysis.',skills:['Piezo sensor or accelerometer','Analog amplification','Sampling','FFT and filtering','Python / MATLAB','Experimental testing'],approach:['Build a small, controlled pipe test setup and attach a vibration or contact sensor.','Record baseline signals for normal flow and several repeatable test conditions.','Compare the signals in time and frequency domains.','Try a simple detection rule and check for false alarms across repeated tests.'],learning:'How sensor placement, flow conditions and background noise affect measurements, and why repeatable tests are essential before claiming a detector works.',note:'Future idea. The first goal is a controlled proof of concept, not a claim that it can detect every real-world leak.'},
+'wattwise':{index:'FUTURE IDEA 06 · PLANNED',status:'Planned project',title:'WattWise',image:'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',lead:'I would like to build a small energy-monitoring setup to measure or estimate consumption and compare how it changes across operating conditions.',why:'Electrical energy is a direct link to my 3EA studies. I want to understand what the measurements actually mean and use them to explain where energy is being consumed.',skills:['Voltage and current measurement','Power and energy calculations','Microcontroller or energy meter interface','Data logging','Python / MATLAB','Visualisation'],approach:['Choose a safe low-voltage test load or a suitable certified meter with an accessible data interface.','Collect measurements over time and calculate energy use.','Compare different operating conditions and plot the results.','Add a simple summary or alert if the data shows a meaningful change.'],learning:'The difference between power and energy, how measurement quality affects conclusions, and how to turn raw readings into useful comparisons.',note:'Future idea. For AC loads, active power and power factor matter; mains measurements must use properly rated, isolated equipment.'},
+'linebot':{index:'FUTURE IDEA 07 · PLANNED',status:'Planned project',title:'Line-Following Robot',image:'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85',lead:'I would like to build a two-wheel robot that follows a line using infrared sensors, then improve its tracking and speed with feedback control.',why:'It is a good way to see automatic control in action: the robot measures its position relative to the line, calculates an error and adjusts its motors continuously.',skills:['Arduino or STM32','C/C++','Infrared reflectance sensors','PWM and H-bridge driver','Wheel encoders','P / PID control'],approach:['Assemble a small two-wheel chassis and test the sensors and motors separately.','Implement a basic line-following rule using the sensor readings.','Tune the response on straight sections and curves, measuring laps and tracking errors.','If the basic version is reliable, add speed feedback and try proportional or PID control.'],learning:'How sensor placement, motor response and controller tuning affect stability, and how to compare performance using repeatable tests.',note:'Future idea. Start with a reliable basic robot before adding encoders or a more advanced controller.'}
+};
+  
+const dialog=document.getElementById('projectDialog');
+  
+function fillList(el,items){el.replaceChildren(...items.map(item=>{const li=document.createElement('li');
+  li.textContent=item;
+  return li}))}
+function openProject(id,jump){const base=projectDetails[id];
+  if(!base)return;
+  const p= currentLanguage==='fr' && projectFrench[id] ? {...base,...projectFrench[id]} : base;
+  document.getElementById('projectDialog').dataset.projectId=id;
+  document.getElementById('dialogIndex').textContent=currentLanguage==='fr'?base.index.replace('PROJECT','PROJET').replace('COMPLETED','RÉALISÉ').replace('FUTURE IDEA','IDÉE FUTURE').replace('PLANNED','ENVISAGÉ'):base.index;
+  const status=document.getElementById('dialogStatus');
+  status.textContent=p.status;
+  status.className='project-status '+(p.index.includes('COMPLETED')?'status-completed':'status-planned');
+  document.getElementById('dialogTitle').textContent=p.title;
+  const isPlanned=base.index.includes('PLANNED');
+  document.getElementById('dialogSkillsHeading').textContent=currentLanguage==='fr'?(isPlanned?'⌘ Compétences à développer':'⌘ Compétences développées'):(isPlanned?'⌘ Skills to develop':'⌘ Skills developed');
+  document.getElementById('dialogLearningHeading').textContent=currentLanguage==='fr'?(isPlanned?'◎ Ce que je veux apprendre':'◎ Ce que j’ai appris'):(isPlanned?'◎ What I want to learn':'◎ What I learned');
+  document.getElementById('dialogLead').textContent=p.lead;
+  document.getElementById('dialogWhy').textContent=p.why;
+  document.getElementById('dialogLearning').textContent=p.learning;
+  document.getElementById('dialogNote').textContent=p.note;
+  const img=document.getElementById('dialogImage');
+  img.onerror=function(){this.onerror=null;this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85';};
+  img.src=p.image;
+  img.alt=p.title+' project visual';
+  const skills=document.getElementById('dialogSkills');
+  skills.replaceChildren(...p.skills.map(s=>{const span=document.createElement('span');
+  span.textContent=s;
+  return span}));
+  fillList(document.getElementById('dialogApproach'),p.approach);
+  if(!dialog.open)dialog.showModal();
+  if(jump){setTimeout(()=>{const target=jump==='skills'?skills:document.getElementById('dialogApproach');
+  target.scrollIntoView({behavior:'smooth',block:'center'})},80)}}
+document.querySelectorAll('[data-open-project]').forEach(button=>button.addEventListener('click',()=>openProject(button.dataset.openProject,button.dataset.jump)));
+  
+document.getElementById('dialogClose').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dialog.open)dialog.close()});
+  
+document.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{const filter=btn.dataset.filter;
+  document.querySelectorAll('.filter-btn').forEach(b=>{const active=b===btn;
+  b.classList.toggle('active',active);
+  b.setAttribute('aria-pressed',String(active))});
+  let count=0;
+  document.querySelectorAll('.project-card').forEach(card=>{const show=filter==='all'||card.dataset.status===filter;
+  card.hidden=!show;
+  if(show)count++});
+  document.getElementById('projectCount').textContent = currentLanguage === 'fr' ? count + (count === 1 ? ' PROJET' : ' PROJETS') : count + ' PROJECT' + (count === 1 ? '' : 'S');
+  document.getElementById('emptyState').style.display=count?'none':'block'}));
+
+// Complete English/French interface: translates all static copy and project details, not just icons.
+const translations = {
+'✦ Why this project?':'✦ Pourquoi ce projet ?','⚙ My approach':'⚙ Ma démarche','⌘ Skills developed':'⌘ Compétences développées','⌘ Skills to develop':'⌘ Compétences à développer','◎ What I learned':'◎ Ce que j’ai appris','◎ What I want to learn':'◎ Ce que je veux apprendre','Engineering student · Toulouse, France':'Étudiant ingénieur · Toulouse, France',
+'Exploring':'À la découverte de','Electronics and Electrical Engineering.':'l’électronique et du génie électrique.',
+'Aymen El Mghaimimi · Toulouse INP–ENSEEIHT · 3EA':'Aymen El Mghaimimi · Toulouse INP–ENSEEIHT · 3EA',
+'I am building a strong technical foundation through engineering coursework, practical projects and continuous learning. I am interested in understanding how electronic systems, software and energy technologies work together to solve real-world problems.':'Je construis de solides bases techniques grâce aux cours d’ingénierie, aux projets pratiques et à l’apprentissage continu. Je m’intéresse à la manière dont les systèmes électroniques, les logiciels et les technologies de l’énergie fonctionnent ensemble pour résoudre des problèmes concrets.',
+'Explore my projects':'Découvrir mes projets','Get in touch':'Me contacter','About':'À propos','Education':'Formation','Projects':'Projets','Skills':'Compétences','Career':'Parcours','Contact':'Contact','Currently studying':'En cours d’apprentissage','Activities':'Activités','Menu':'Menu',
+'Building a foundation in ':'Construire des bases en ','engineering.':'ingénierie.','I am an engineering student at Toulouse INP–ENSEEIHT, in the Electronics, Electrical Energy and Automatic Control department (3EA). My academic background in electrical engineering has given me a foundation in electronics, electrical systems, programming and automation.':'Je suis étudiant ingénieur à Toulouse INP–ENSEEIHT, au département Électronique, Énergie électrique et Automatique (3EA). Mon parcours en génie électrique m’a apporté des bases en électronique, systèmes électriques, programmation et automatisme.',
+'Technical curiosity':'Curiosité technique','I enjoy understanding how electronic hardware, embedded software and control systems work together to create reliable engineering solutions.':'J’aime comprendre comment le matériel électronique, les logiciels embarqués et les systèmes de commande fonctionnent ensemble pour créer des solutions fiables.','Learning by building':'Apprendre en réalisant','I learn by turning concepts into working systems, testing ideas through simulation and improving designs step by step.':'J’apprends en transformant des concepts en systèmes fonctionnels, en testant des idées par simulation et en améliorant les conceptions étape par étape.',
+'My academic ':'Mon parcours ','path.':'académique.','A progression from physical sciences to electrical engineering and a broader engineering curriculum.':'Un parcours des sciences physiques au génie électrique, puis vers une formation d’ingénieur plus large.','Engineering cycle. Building skills in electronics, electrical engineering, automation, computer systems, signal processing and applied mathematics.':'Cycle ingénieur. Développement de compétences en électronique, génie électrique, automatisme, systèmes informatiques, traitement du signal et mathématiques appliquées.','Bachelor’s Degree in Electronics and Electrical Engineering':'Licence en électronique et génie électrique','Faculty of Sciences Aïn Chock (FSAC), Hassan II University of Casablanca (UH2C), Morocco · EEAI (Electrical Engineering, Electronics, Automatic Control and Industrial Computing).':'Faculté des sciences Aïn Chock (FSAC), Université Hassan II de Casablanca (UH2C), Maroc · EEAI (électrotechnique, électronique, automatique et informatique industrielle).','DEUG in Physical Sciences, providing a foundation in mathematics, physics and scientific methods.':'DEUG en sciences physiques, apportant des bases en mathématiques, physique et méthodes scientifiques.','Scientific Baccalaureate, Physics and Chemistry.':'Baccalauréat scientifique, physique-chimie.',
+'Learning through ':'Apprendre en ','building.':'réalisant.','Completed work and future explorations are presented separately so that my experience and ambitions remain clear. Open a project to explore the motivation, approach and skills involved.':'Les réalisations et les projets envisagés sont présentés séparément afin de distinguer clairement mon expérience de mes ambitions. Ouvre un projet pour découvrir sa motivation, la démarche suivie et les compétences mobilisées.','Explore the project collection':'Explorer les projets','All projects':'Tous les projets','Future ideas':'Projets envisagés','No projects match this filter.':'Aucun projet ne correspond à ce filtre.',
+'Completed · Prototype + simulation':'Réalisé · Prototype et simulation','Completed · Simulation':'Réalisé · Simulation','Completed · Proteus simulation':'Réalisé · Simulation Proteus','Completed · Pair project':'Réalisé · Projet en binôme','Completed · Team project':'Réalisé · Projet en équipe','Planned project':'Projet envisagé','Explore project':'Explorer le projet','Explore idea':'Explorer cette idée',
+'An Arduino-based home automation system combining sensors, lighting control, window operation and temperature-related functions.':'Système domotique à base d’Arduino intégrant des capteurs, la commande de l’éclairage, l’actionnement des fenêtres et des fonctions liées à la température.','A simulated parking access system using an ultrasonic sensor to detect a vehicle and trigger an automated response.':'Simulation d’un système d’accès à un parking utilisant un capteur ultrasonique pour détecter un véhicule et déclencher une action automatique.','A PIC16F84A-based access-control circuit programmed in assembly, using a four-input code sequence and red/green indicators.':'Circuit de contrôle d’accès à base de PIC16F84A programmé en assembleur, avec une séquence de code à quatre entrées et des voyants rouge/vert.','A console game developed in a pair, with collision handling, scoring, difficulty options, obstacles and replay functionality.':'Jeu en console développé en binôme, avec gestion des collisions, score, niveaux de difficulté, obstacles et possibilité de rejouer.','A student community platform concept focused on academic and career opportunities, productivity and peer support.':'Concept de plateforme communautaire étudiante axée sur les opportunités académiques et professionnelles, la productivité et l’entraide.',
+'A rotating LED display that creates floating text and simple animations using precise timing and position synchronisation.':'Écran à LED rotatif affichant du texte et des animations simples grâce à une synchronisation précise de la rotation et de l’affichage.','A simple robotic hand controlled by muscle activity measured with a surface EMG sensor.':'Main robotisée simple commandée par l’activité musculaire mesurée à l’aide d’un capteur EMG de surface.','A small SDR reception setup for exploring real radio signals, viewing their spectrum and learning about satellite communications.':'Petit dispositif de réception radio logicielle (SDR) pour explorer des signaux réels, observer leur spectre et découvrir les communications satellitaires.','An experimental system that recognises operating states of a low-voltage device from its electrical measurements.':'Système expérimental visant à reconnaître les états de fonctionnement d’un appareil basse tension à partir de mesures électriques.','A small test bench to investigate whether pipe vibrations can help distinguish normal flow from a controlled leak.':'Banc d’essai pour étudier si les vibrations d’une canalisation permettent de distinguer un écoulement normal d’une fuite contrôlée.','An energy-monitoring setup to measure or estimate consumption, compare operating conditions and visualise energy use over time.':'Système de suivi énergétique pour mesurer ou estimer la consommation, comparer les conditions de fonctionnement et visualiser l’énergie utilisée au fil du temps.','A small mobile robot that follows a track using infrared sensors, with a goal of improving speed and tracking through feedback control.':'Petit robot mobile suivant une ligne grâce à des capteurs infrarouges, avec pour objectif d’améliorer sa vitesse et son suivi par commande en boucle fermée.',
+'Skills & tools ':'Compétences et outils ','in progress.':'en développement.','Skills built through my previous degree, technical training and projects, alongside new foundations I am developing at ENSEEIHT.':'Compétences acquises durant mon diplôme précédent, mes formations techniques et mes projets, complétées par les nouvelles bases que je développe à l’ENSEEIHT.','Programming & Computing':'Programmation et informatique','Electronics, Electrical & Embedded Systems':'Électronique, génie électrique et systèmes embarqués','Software & Engineering Tools':'Logiciels et outils d’ingénierie','Languages':'Langues','Working approach':'Méthode de travail','Arabic — native language':'Arabe — langue maternelle','French — C1 certified (TCF TP, December 2025)':'Français — niveau C1 certifié (TCF TP, décembre 2025)','English — intermediate':'Anglais — intermédiaire','German — beginner; currently learning at ENSEEIHT (LV2)':'Allemand — débutant, apprentissage en cours à l’ENSEEIHT (LV2)',
+'Skills I am ':'Compétences que je ','developing.':'développe.','These areas reflect my current engineering curriculum, not a claim of advanced professional expertise.':'Ces domaines reflètent mon programme actuel et ne constituent pas une prétention à une expertise professionnelle avancée.','Digital Systems and Computer Architecture':'Systèmes numériques et architecture des ordinateurs','Combinational and sequential logic, assembly language and the fundamentals of computer architecture.':'Logique combinatoire et séquentielle, langage assembleur et principes de l’architecture des ordinateurs.','Circuits, Electronics and Electrical Energy':'Circuits, électronique et énergie électrique','Circuit analysis, measurements, electronic components, semiconductor fundamentals and power-electronics concepts.':'Analyse des circuits, mesures, composants électroniques, bases des semi-conducteurs et notions d’électronique de puissance.','Signals, Systems and Control':'Signaux, systèmes et automatique','Signal processing, continuous-time linear systems, system modelling and introductory control methods.':'Traitement du signal, systèmes linéaires à temps continu, modélisation des systèmes et méthodes introductives de commande.','Mathematical and Numerical Methods':'Méthodes mathématiques et numériques','Complex analysis, probability, statistics, numerical analysis, optimisation and differential equations.':'Analyse complexe, probabilités, statistiques, analyse numérique, optimisation et équations différentielles.','Engineering Practice and Communication':'Pratique de l’ingénieur et communication','Technical communication, collaborative project work, structured problem-solving and an introduction to management methods.':'Communication technique, projets collaboratifs, résolution structurée de problèmes et introduction aux méthodes de management.',
+'Where I want to ':'Les domaines que je veux ','go deeper.':'approfondir.','Technical fields I would like to explore through courses, projects, internships and professional experience.':'Domaines techniques que je souhaite explorer à travers les cours, les projets, les stages et l’expérience professionnelle.','Embedded Systems':'Systèmes embarqués','Hardware-software integration, microcontrollers, firmware and reliable embedded applications.':'Intégration matériel-logiciel, microcontrôleurs, micrologiciels et applications embarquées fiables.','Electronics & FPGA':'Électronique et FPGA','Electronic architectures, digital design, programmable logic and hardware implementation.':'Architectures électroniques, conception numérique, logique programmable et réalisation matérielle.','Space Technologies':'Technologies spatiales','Satellite systems, aerospace electronics, onboard equipment and communication technologies.':'Systèmes satellitaires, électronique aérospatiale, équipements embarqués et technologies de communication.','Automation & Robotics':'Automatique et robotique','Control systems, sensing, modelling and the interaction between physical systems and software.':'Systèmes de commande, capteurs, modélisation et interactions entre systèmes physiques et logiciels.','Signal Processing':'Traitement du signal','Mathematical tools and algorithms for analysing and processing signals in engineering applications.':'Outils mathématiques et algorithmes d’analyse et de traitement des signaux en ingénierie.','Technical Leadership':'Leadership technique','In the longer term, I would like to combine technical expertise with project coordination and engineering management.':'À terme, je souhaite associer expertise technique, coordination de projets et management de l’ingénierie.',
+'From engineering foundations to ':'Des bases d’ingénieur au ','technical leadership.':'management technique.','My priority is to build solid technical expertise, contribute to meaningful engineering projects and gain industry experience, initially in France. Over time, I aim to take on greater responsibilities at the intersection of technology, project coordination and engineering management.':'Ma priorité est de consolider mon expertise technique, de contribuer à des projets d’ingénierie concrets et d’acquérir une expérience en entreprise, d’abord en France. À terme, je souhaite prendre davantage de responsabilités à l’intersection de la technologie, de la coordination de projets et du management technique.',
+'Beyond engineering':'Au-delà de l’ingénierie','Learning through people and ':'Apprendre grâce aux personnes et aux ','experiences.':'expériences.','Activities and interests that help me develop creativity, collaboration and a balanced approach to student life.':'Activités et centres d’intérêt qui m’aident à développer ma créativité, l’esprit d’équipe et un équilibre dans la vie étudiante.','Photography, visual creativity and learning to communicate through images.':'Photographie, créativité visuelle et apprentissage de la communication par l’image.','Music and an opportunity to explore guitar and creative collaboration.':'Musique, découverte de la guitare et collaboration créative.','Sport and wellbeing':'Sport et bien-être','Interested in football and swimming, and gradually improving fitness through regular practice.':'Intéressé par le football et la natation, avec l’objectif de progresser grâce à une pratique régulière.',
+'Connect and ':'Restons en contact et ','learn more.':'faisons connaissance.','For professional updates or further information about my background, you can reach me through the links below.':'Pour suivre mon parcours ou obtenir davantage d’informations sur mon profil, vous pouvez utiliser les liens ci-dessous.','View or download my CV in PDF format.':'Consulter ou télécharger mon CV au format PDF.','Add your PDF as ':'Ajoutez votre PDF sous le nom ','assets/cv-aymen-el-mghaimimi.pdf':'assets/cv-aymen-el-mghaimimi.pdf',', then use the CV buttons here.':', puis utilisez les boutons du CV ici.','Let’s start a ':'Commençons une ','conversation.':'conversation.','Let\'s start a ':'Commençons une ','I am open to connecting with engineering students, professionals and people working in fields related to my technical interests.':'Je suis ouvert aux échanges avec des étudiants ingénieurs, des professionnels et des personnes travaillant dans les domaines liés à mes intérêts techniques.','The best way to contact me directly.':'Le meilleur moyen de me contacter directement.','For professional networking and career discussions.':'Pour échanger sur le réseau professionnel et les parcours de carrière.','Visit my LinkedIn ↗':'Voir mon LinkedIn ↗','Connect on LinkedIn ↗':'Me retrouver sur LinkedIn ↗','View CV (PDF) ↗':'Voir le CV (PDF) ↗','Download CV':'Télécharger le CV','Photo':'Photo','Electrical Energy · Electronics · Engineering':'Énergie électrique · Électronique · Ingénierie',
+'Electronics':'Électronique',
+'Embedded Systems':'Systèmes embarqués',
+'Electrical Energy':'Énergie électrique',
+'Automation & Control':'Automatique et commande',
+'Programming & Computing':'Programmation et informatique',
+'YOUR PHOTO':'VOTRE PHOTO',
+'Place your image at':'Placez votre photo dans',
+'Electrical Energy · Electronics · Engineering':'Énergie électrique · Électronique · Ingénierie',
+'About me':'À propos de moi',
+'2026 – Present':'2026 – Aujourd’hui',
+'Toulouse INP–ENSEEIHT · France':'Toulouse INP–ENSEEIHT · France',
+'2025 – 2026':'2025 – 2026',
+'2023 – 2025':'2023 – 2025',
+'Faculty of Sciences Aïn Chock · UH2C, Morocco':'Faculté des sciences Aïn Chock · UH2C, Maroc',
+'2022 – 2023':'2022 – 2023',
+'Groupe scolaire Henri Matisse · Casablanca, Morocco':'Groupe scolaire Henri Matisse · Casablanca, Maroc',
+'PROJECTS: use the filters and open each card to explore its details.':'PROJETS : utilisez les filtres et ouvrez chaque carte pour découvrir les détails.',
+'12 PROJECTS':'12 PROJETS',
+'Completed':'Réalisés',
+'PROJECT 01 / BUILT':'PROJET 01 / RÉALISÉ',
+'PROJECT 02 / SIMULATED':'PROJET 02 / SIMULÉ',
+'PROJECT 03 / SIMULATED':'PROJET 03 / SIMULÉ',
+'PROJECT 04 / CODED':'PROJET 04 / PROGRAMMÉ',
+'PROJECT 05 / TEAM':'PROJET 05 / ÉQUIPE',
+'FUTURE IDEA 01':'IDÉE FUTURE 01',
+'FUTURE IDEA 02':'IDÉE FUTURE 02',
+'FUTURE IDEA 03':'IDÉE FUTURE 03',
+'FUTURE IDEA 04':'IDÉE FUTURE 04',
+'FUTURE IDEA 05':'IDÉE FUTURE 05',
+'FUTURE IDEA 06':'IDÉE FUTURE 06',
+'FUTURE IDEA 07':'IDÉE FUTURE 07',
+'An experimental system that recognises operating states of a low-voltage device from its electrical measurements.':'Système expérimental visant à reconnaître les états de fonctionnement d’un appareil basse tension à partir de ses mesures électriques.',
+'A small test bench to investigate whether pipe vibrations can help distinguish normal flow from a controlled leak.':'Petit banc d’essai pour étudier si les vibrations d’une canalisation permettent de distinguer un écoulement normal d’une fuite contrôlée.',
+'An energy-monitoring setup to measure or estimate consumption, compare operating conditions and visualise energy use over time.':'Système de suivi énergétique pour mesurer ou estimer la consommation, comparer les conditions de fonctionnement et visualiser l’évolution de l’énergie consommée.',
+'A small mobile robot that follows a track using infrared sensors, with a goal of improving speed and tracking through feedback control.':'Petit robot mobile suivant une ligne à l’aide de capteurs infrarouges, avec pour objectif d’améliorer la vitesse et le suivi grâce à une commande en boucle fermée.',
+'Keeping it honest:':'Pour rester fidèle à la réalité :',
+'completed projects describe previous work; future projects are ideas I would like to explore. Their designs, components and methods may evolve as I learn and test what is feasible.':'les projets réalisés décrivent un travail déjà effectué ; les projets futurs sont des idées que je souhaite explorer. Leur conception, leurs composants et leurs méthodes pourront évoluer selon mes apprentissages et les tests de faisabilité.',
+'Technical toolkit':'Boîte à outils technique',
+'Electrotechnics & Electrical Systems':'Électrotechnique et systèmes électriques','Electrical networks and power distribution fundamentals':'Bases des réseaux électriques et de la distribution d’énergie','Electrical equipment and protection apparatus':'Appareillage électrique et dispositifs de protection','Electrical energy and circuit analysis':'Énergie électrique et analyse des circuits','Industrial electrical installations':'Installations électriques industrielles','Electronics & Embedded Systems':'Électronique et systèmes embarqués','Analog and digital electronics':'Électronique analogique et numérique','Arduino prototyping, sensors and microcontrollers':'Prototypage Arduino, capteurs et microcontrôleurs','Digital logic fundamentals':'Bases de la logique numérique','Electronic circuits and instrumentation':'Circuits électroniques et instrumentation','Automatic Control & Signal Processing':'Automatique et traitement du signal','Automatic control and system modelling':'Automatique et modélisation des systèmes','Signal processing fundamentals':'Bases du traitement du signal','Industrial automation and control logic':'Automatisme industriel et logique de commande','Measurement, analysis and technical problem-solving':'Mesure, analyse et résolution de problèmes techniques','Programming & Industrial Computing':'Programmation et informatique industrielle','C programming and Python':'Programmation en C et Python','Ladder logic, STEP 7 and Automgen':'Ladder, STEP 7 et Automgen','Computer networks and industrial communication fundamentals':'Bases des réseaux informatiques et des communications industrielles','Simulation & Engineering Tools':'Simulation et outils d’ingénierie','Arduino IDE and embedded prototyping tools':'Arduino IDE et outils de prototypage embarqué','Digital Systems, FPGA and VHDL':'Systèmes numériques, FPGA et VHDL','VHDL and digital hardware description, alongside combinational and sequential logic and computer architecture, as part of my current ENSEEIHT curriculum.':'VHDL et description matérielle numérique, avec la logique combinatoire et séquentielle et l’architecture des ordinateurs, dans le cadre de mon programme actuel à l’ENSEEIHT.','Skills & tools':'Compétences et outils',
+'in progress.':'en cours.',
+'Skills built through my previous degree, technical training and projects, alongside new foundations I am developing at ENSEEIHT.':'Compétences acquises durant ma licence, mes formations techniques et mes projets, complétées par les nouvelles bases que je développe à l’ENSEEIHT.',
+'C programming and algorithmic problem-solving':'Programmation en C et résolution algorithmique de problèmes',
+'Computer architecture — currently developing':'Architecture des ordinateurs — en cours d’apprentissage',
+'Electronics, Electrical & Embedded Systems':'Électronique, énergie électrique et systèmes embarqués',
+'Arduino-based prototyping and sensor integration':'Prototypage avec Arduino et intégration de capteurs',
+'Electronic components and basic circuits':'Composants électroniques et circuits de base',
+'Smart home and automatic parking prototypes':'Prototypes de domotique et de parking automatique',
+'Combinational and sequential logic — currently developing':'Logique combinatoire et séquentielle — en cours d’apprentissage',
+'Software & Engineering Tools':'Logiciels et outils d’ingénierie',
+'Machine Learning with Python — introductory training':'Apprentissage automatique avec Python — initiation',
+'Arabic — native language':'Arabe — langue maternelle',
+'French — C1 certified (TCF TP, December 2025)':'Français — niveau C1 certifié (TCF TP, décembre 2025)',
+'English — intermediate':'Anglais — intermédiaire',
+'German — beginner; currently learning at ENSEEIHT (LV2)':'Allemand — débutant ; apprentissage à l’ENSEEIHT (LV2)',
+'Working approach':'Méthode de travail',
+'Analytical and structured problem-solving':'Résolution analytique et structurée de problèmes',
+'Learning through practical experimentation':'Apprentissage par l’expérimentation pratique',
+'Teamwork on academic projects':'Travail en équipe sur des projets universitaires',
+'Continuous improvement and technical curiosity':'Amélioration continue et curiosité technique',
+'These areas reflect my current engineering curriculum, not a claim of advanced professional expertise.':'Ces domaines reflètent mon programme actuel d’ingénieur et ne prétendent pas représenter une expertise professionnelle avancée.',
+'Digital Systems and Computer Architecture':'Systèmes numériques et architecture des ordinateurs',
+'Combinational and sequential logic, assembly language and the fundamentals of computer architecture.':'Logique combinatoire et séquentielle, langage assembleur et bases de l’architecture des ordinateurs.',
+'Circuits, Electronics and Electrical Energy':'Circuits, électronique et énergie électrique',
+'Circuit analysis, measurements, electronic components, semiconductor fundamentals and power-electronics concepts.':'Analyse de circuits, mesures, composants électroniques, bases des semi-conducteurs et notions d’électronique de puissance.',
+'Signals, Systems and Control':'Signaux, systèmes et automatique',
+'Signal processing, continuous-time linear systems, system modelling and introductory control methods.':'Traitement du signal, systèmes linéaires à temps continu, modélisation et méthodes introductives de commande.',
+'Mathematical and Numerical Methods':'Méthodes mathématiques et numériques',
+'Complex analysis, probability, statistics, numerical analysis, optimisation and differential equations.':'Analyse complexe, probabilités, statistiques, analyse numérique, optimisation et équations différentielles.',
+'Engineering Practice and Communication':'Pratique de l’ingénierie et communication',
+'Technical communication, collaborative project work, structured problem-solving and an introduction to management methods.':'Communication technique, projets collaboratifs, résolution structurée de problèmes et introduction aux méthodes de management.',
+'Technical fields I would like to explore through courses, projects, internships and professional experience.':'Domaines techniques que je souhaite explorer grâce aux cours, aux projets, aux stages et à l’expérience professionnelle.',
+'Hardware-software integration, microcontrollers, firmware and reliable embedded applications.':'Intégration matériel-logiciel, microcontrôleurs, micrologiciels et applications embarquées fiables.',
+'Electronic architectures, digital design, programmable logic and hardware implementation.':'Architectures électroniques, conception numérique, logique programmable et implémentation matérielle.',
+'Satellite systems, aerospace electronics, onboard equipment and communication technologies.':'Systèmes satellitaires, électronique aérospatiale, équipements embarqués et technologies de communication.',
+'Control systems, sensing, modelling and the interaction between physical systems and software.':'Systèmes de commande, capteurs, modélisation et interactions entre systèmes physiques et logiciels.',
+'Mathematical tools and algorithms for analysing and processing signals in engineering applications.':'Outils mathématiques et algorithmes pour analyser et traiter les signaux dans les applications d’ingénierie.',
+'In the longer term, I would like to combine technical expertise with project coordination and engineering management.':'À long terme, je souhaite associer expertise technique, coordination de projets et management de l’ingénierie.',
+'My priority is to build solid technical expertise, contribute to meaningful engineering projects and gain industry experience, initially in France. Over time, I aim to take on greater responsibilities at the intersection of technology, project coordination and engineering management.':'Ma priorité est de développer une solide expertise technique, de contribuer à des projets d’ingénierie concrets et d’acquérir une expérience en entreprise, d’abord en France. À terme, je souhaite assumer davantage de responsabilités à l’intersection de la technologie, de la coordination de projets et du management de l’ingénierie.',
+'Activities and interests that help me develop creativity, collaboration and a balanced approach to student life.':'Activités et centres d’intérêt qui développent ma créativité, mon esprit d’équipe et un équilibre dans la vie étudiante.',
+'Photography, visual creativity and learning to communicate through images.':'Photographie, créativité visuelle et apprentissage de la communication par l’image.',
+'Music and an opportunity to explore guitar and creative collaboration.':'Musique et occasion de découvrir la guitare et la création collective.',
+'Interested in football and swimming, and gradually improving fitness through regular practice.':'Intérêt pour le football et la natation, avec une amélioration progressive de la condition physique grâce à une pratique régulière.',
+'For professional updates or further information about my background, you can reach me through the links below.':'Pour suivre mon parcours professionnel ou en savoir plus sur mon profil, vous pouvez utiliser les liens ci-dessous.',
+'Connect with me and follow my academic and professional journey.':'Retrouvez-moi et suivez mon parcours universitaire et professionnel.',
+'View or download my CV in PDF format.':'Consultez ou téléchargez mon CV au format PDF.',
+'Add your PDF as':'Ajoutez votre PDF sous le nom',
+'then use the CV buttons here.':'puis utilisez les boutons du CV ici.',
+'The best way to contact me directly.':'Le moyen le plus direct de me contacter.',
+'For professional networking and career discussions.':'Pour le réseautage professionnel et les échanges autour de la carrière.',
+'Engineering Portfolio':'Portfolio d’ingénierie',
+'Back to top ↑':'Retour en haut ↑',
+'PROJECT DETAILS':'DÉTAILS DU PROJET',
+'Project title':'Titre du projet',
+};
+
+// Missing exact strings from the current HTML (including headings and small labels).
+Object.assign(translations, {
+'Electronics & Digital Systems':'Électronique et systèmes numériques',
+'Electrical Energy & Power systems':'Énergie électrique et systèmes de puissance',
+'Signal processing& Industrial Computing':'Traitement du signal et informatique industrielle',
+'YOUR PHOTO':'VOTRE PHOTO',
+'Place your image at':'Placez votre image dans',
+'About me':'À propos de moi',
+'I am an engineering student at Toulouse INP–ENSEEIHT, within the Electronics, Electrical Energy and Automatic Control (3EA) department. My academic background in Electrical Engineering has provided me with a solid foundation in electrical engineering, analog and digital electronics, embedded systems, control engineering and industrial computing. I am keen to further develop these skills and apply them to innovative technological solutions.':'Je suis étudiant ingénieur à Toulouse INP–ENSEEIHT, au département Électronique, Énergie électrique et Automatique (3EA). Mon parcours en génie électrique m’a apporté de solides bases en génie électrique, électronique analogique et numérique, systèmes embarqués, automatique et informatique industrielle. Je souhaite approfondir ces compétences et les mettre au service de solutions technologiques innovantes.',
+'2026 – Present':'2026 – Aujourd’hui',
+'2025 – 2026':'2025 – 2026',
+'2023 – 2025':'2023 – 2025',
+'2022 – 2023':'2022 – 2023',
+'Toulouse INP–ENSEEIHT · France':'Toulouse INP–ENSEEIHT · France',
+'Faculty of Sciences Aïn Chock · UH2C, Morocco':'Faculté des sciences Aïn Chock · UH2C, Maroc',
+'Groupe scolaire Henri Matisse · Casablanca, Morocco':'Groupe scolaire Henri Matisse · Casablanca, Maroc',
+'PROJECTS: use the filters and open each card to explore its details.':'PROJETS : utilisez les filtres et ouvrez chaque carte pour découvrir les détails.',
+'Completed':'Réalisés',
+'PROJECT 01 / BUILT':'PROJET 01 / RÉALISÉ',
+'PROJECT 02 / SIMULATED':'PROJET 02 / SIMULÉ',
+'PROJECT 03 / SIMULATED':'PROJET 03 / SIMULÉ',
+'PROJECT 04 / CODED':'PROJET 04 / PROGRAMMÉ',
+'PROJECT 05 / TEAM':'PROJET 05 / ÉQUIPE',
+'FUTURE IDEA 01':'IDÉE FUTURE 01','FUTURE IDEA 02':'IDÉE FUTURE 02','FUTURE IDEA 03':'IDÉE FUTURE 03','FUTURE IDEA 04':'IDÉE FUTURE 04','FUTURE IDEA 05':'IDÉE FUTURE 05','FUTURE IDEA 06':'IDÉE FUTURE 06','FUTURE IDEA 07':'IDÉE FUTURE 07',
+'Keeping it honest:':'Pour rester précis :',
+'completed projects describe previous work; future projects are ideas I would like to explore. Their designs, components and methods may evolve as I learn and test what is feasible.':'les projets réalisés décrivent des travaux déjà effectués ; les projets futurs sont des pistes que je souhaite explorer. Leur conception, leurs composants et leurs méthodes pourront évoluer au fil de mon apprentissage et des essais de faisabilité.',
+'Technical toolkit':'Boîte à outils technique',
+'Skills & tools':'Compétences et outils',
+'Skills built through my previous degree, technical training and projects, alongside new foundations I am developing at ENSEEIHT.':'Compétences acquises lors de ma formation précédente, de mes apprentissages techniques et de mes projets, complétées par les nouvelles bases que je développe à l’ENSEEIHT.',
+'Electrotechnics & Electrical Systems':'Électrotechnique et systèmes électriques',
+'Electrical networks and power distribution fundamentals':'Bases des réseaux électriques et de la distribution d’énergie',
+'Electrical equipment and protection apparatus':'Équipements électriques et appareillage de protection',
+'Electrical energy and circuit analysis':'Énergie électrique et analyse des circuits',
+'Industrial electrical installations':'Installations électriques industrielles',
+'Electronics & Embedded Systems':'Électronique et systèmes embarqués',
+'Analog and digital electronics':'Électronique analogique et numérique',
+'Arduino prototyping, sensors and microcontrollers':'Prototypage Arduino, capteurs et microcontrôleurs',
+'Digital logic fundamentals':'Bases de la logique numérique',
+'Electronic circuits and instrumentation':'Circuits électroniques et instrumentation',
+'Automatic Control & Signal Processing':'Automatique et traitement du signal',
+'Automatic control and system modelling':'Automatique et modélisation des systèmes',
+'Signal processing fundamentals':'Bases du traitement du signal',
+'Industrial automation and control logic':'Automatisation industrielle et logique de commande',
+'Measurement, analysis and technical problem-solving':'Mesure, analyse et résolution de problèmes techniques',
+'Programming & Industrial Computing':'Programmation et informatique industrielle',
+'C programming and Python':'Programmation en C et Python',
+'PIC assembly language':'Assembleur pour microcontrôleurs PIC',
+'Ladder logic, STEP 7 and Automgen':'Langage Ladder, STEP 7 et Automgen',
+'Computer networks and industrial communication fundamentals':'Bases des réseaux informatiques et des communications industrielles',
+'Simulation & Engineering Tools':'Simulation et outils d’ingénierie',
+'MATLAB / Simulink':'MATLAB / Simulink',
+'Proteus, Tinkercad and Fritzing':'Proteus, Tinkercad et Fritzing',
+'Arduino IDE and embedded prototyping tools':'Arduino IDE et outils de prototypage embarqué',
+'Arabic — native language':'Arabe — langue maternelle',
+'French — C1 certified (TCF TP, December 2025)':'Français — niveau C1 certifié (TCF TP, décembre 2025)',
+'English — intermediate':'Anglais — niveau intermédiaire',
+'German — beginner; currently learning at ENSEEIHT (LV2)':'Allemand — débutant ; apprentissage en cours à l’ENSEEIHT (LV2)',
+'Working approach':'Méthode de travail',
+'Analytical and structured problem-solving':'Résolution analytique et structurée de problèmes',
+'Learning through practical experimentation':'Apprentissage par l’expérimentation',
+'Skills I am':'Compétences que je',
+'developing.':'développe.',
+'Digital Systems, FPGA and VHDL':'Systèmes numériques, FPGA et VHDL',
+'VHDL and digital hardware description, alongside combinational and sequential logic and computer architecture, as part of my current ENSEEIHT curriculum.':'VHDL et description matérielle numérique, ainsi que logique combinatoire et séquentielle et architecture des ordinateurs, dans le cadre de mon cursus actuel à l’ENSEEIHT.',
+'Circuits, Electronics and Electrical Energy':'Circuits, électronique et énergie électrique',
+'Signals, Systems and Control':'Signaux, systèmes et automatique',
+'Mathematical and Numerical Methods':'Méthodes mathématiques et numériques',
+'Areas of interest':'Centres d’intérêt techniques',
+'Where I want to':'Les domaines que je souhaite',
+'go deeper.':'approfondir.',
+'◉':'◉',
+'Embedded Systems':'Systèmes embarqués',
+'Electronics & FPGA':'Électronique et FPGA',
+'Space Technologies':'Technologies spatiales',
+'Automation & Robotics':'Automatique et robotique',
+'Signal Processing':'Traitement du signal',
+'Technical Leadership':'Management technique',
+'Career direction':'Orientation professionnelle',
+'technical leadership.':'management technique.',
+"Let's connect":'Entrons en contact',
+'Beyond engineering':'Au-delà de l’ingénierie',
+'Club Photo7':'Club Photo7',
+'Sport and wellbeing':'Sport et bien-être',
+'Explore my profile':'Découvrir mon profil',
+'Connect and':'Échanger et',
+'learn more.':'en savoir plus.',
+'LinkedIn':'LinkedIn',
+'Visit my LinkedIn ↗':'Voir mon profil LinkedIn ↗',
+'Curriculum Vitae':'Curriculum vitæ',
+'View CV (PDF) ↗':'Consulter le CV (PDF) ↗',
+"Let's start a":'Commençons une',
+'conversation.':'conversation.',
+'Email':'E-mail',
+'Connect on LinkedIn ↗':'Me retrouver sur LinkedIn ↗',
+'Passer en français':'Passer en français',
+'Switch to English':'Passer en anglais',
+'Open navigation menu':'Ouvrir le menu de navigation',
+'Close navigation menu':'Fermer le menu de navigation',
+'Close project details':'Fermer les détails du projet',
+'Profile photo':'Photo de profil',
+'Building a foundation in':'Construire des bases en',
+'My academic':'Mon parcours',
+'Learning through':'Apprendre en',
+'Learning through people and':'Apprendre au contact des autres et à travers les',
+'From engineering foundations to':'Des bases en ingénierie au',
+'Arabic — native. French — C1 certified (TCF TP, December 2025). English — intermediate and developing technical fluency. German — beginner, currently learning at ENSEEIHT (LV2).':'Arabe — langue maternelle. Français — niveau C1 certifié (TCF TP, décembre 2025). Anglais — niveau intermédiaire, avec une aisance technique en progression. Allemand — débutant, apprentissage en cours à l’ENSEEIHT (LV2).',
+'Automation':'Automatisation',
+'Embedded':'Embarqué',
+'Sensors':'Capteurs',
+'Algorithms':'Algorithmes',
+'Teamwork':'Travail en équipe',
+'Product thinking':'Réflexion produit',
+'Student life':'Vie étudiante',
+'Current sensing':'Mesure du courant',
+'Classification':'Classification',
+'Vibration sensors':'Capteurs de vibration',
+'Acoustics':'Acoustique',
+'Motor control':'Commande moteur',
+'Data analysis':'Analyse de données',
+'Measurement':'Mesure',
+'Power':'Puissance',
+'ADC':'CAN',
+'PID control':'Commande PID',
+'Embedded C':'C embarqué',
+'Assembly':'Assembleur',
+'Future ideas':'Projets envisagés',
+'Completed':'Réalisés',
+'Aymen El Mghaimimi | Engineering Portfolio':'Aymen El Mghaimimi | Portfolio d’ingénierie',
+'Aymen El Mghaimimi · Engineering Portfolio':'Aymen El Mghaimimi · Portfolio d’ingénierie',
+'Aymen El Mghaimimi — Electronics and Electrical Engineering student at Toulouse INP–ENSEEIHT, 3EA. Completed projects, planned explorations and technical interests.':'Aymen El Mghaimimi — étudiant en électronique et génie électrique à Toulouse INP–ENSEEIHT, 3EA. Projets réalisés, explorations envisagées et centres d’intérêt techniques.',
+'assets/profile-photo.jpg':'assets/profile-photo.jpg'
+});
+
+const projectFrench = {
+'smart-home':{status:'Réalisé · Prototype et simulation',lead:'Projet domotique à base d’Arduino réunissant des capteurs, une logique de commande et plusieurs sorties. Le prototype a été réalisé et testé, avec une simulation Tinkercad pendant le développement.',why:'Je voulais comprendre comment plusieurs entrées peuvent fonctionner ensemble pour automatiser certaines fonctions d’une maison. Ce projet relie l’électronique de base à la programmation et au comportement concret d’un système.',skills:['Arduino UNO','Capteur PIR','LDR','DHT11 / mesure de température','Écran LCD et buzzer','Commande servo / relais'],approach:['Connecter les capteurs et les sorties à l’Arduino et vérifier chaque composant séparément.','Écrire la logique de commande pour la présence, la lumière et les fonctions liées à la température.','Intégrer les sorties et les retours utilisateur, puis tester différentes conditions d’entrée.','Comparer le montage réel à la simulation et corriger les problèmes détectés.'],learning:'Intégrer plusieurs capteurs et actionneurs, structurer le code embarqué, déboguer les connexions matérielles et tester un système complet.',note:'Projet réalisé. La version décrite doit correspondre aux composants réellement utilisés.'},
+'parking':{status:'Réalisé · Simulation',lead:'Système d’accès à un parking simulé utilisant un capteur ultrasonique HC-SR04 pour détecter un véhicule et déclencher une réponse programmée.',why:'Ce projet m’a permis de pratiquer la lecture d’un capteur et l’utilisation de mesures pour prendre une décision automatisée.',skills:['Arduino','Capteur ultrasonique HC-SR04','Mesure de distance','Logique conditionnelle','Simulation'],approach:['Configurer le capteur et le microcontrôleur dans la simulation.','Lire la distance mesurée et choisir un seuil de détection.','Programmer et tester la réponse lorsqu’un véhicule est détecté ou s’éloigne.','Vérifier le comportement pour différentes distances simulées.'],learning:'Comprendre la mesure de distance, l’effet des seuils sur la détection et l’importance de tester plusieurs conditions.',note:'Projet simulé ; ne pas le présenter comme un prototype physique réalisé.'},
+'access':{status:'Réalisé · Simulation Proteus',lead:'Circuit de contrôle d’accès basé sur un PIC16F84A, programmé en assembleur et testé sous Proteus. Le système vérifie une séquence à quatre entrées et utilise des LED rouges et vertes pour indiquer le résultat.',why:'Ce projet m’a permis de travailler plus près du microcontrôleur et de comprendre comment un petit système numérique lit une séquence d’entrées et y répond.',skills:['PIC16F84A','Langage assembleur','Logique numérique','Proteus','Gestion des entrées/sorties'],approach:['Définir la séquence d’entrée et les conditions de validation du code.','Écrire le programme assembleur pour lire les entrées et vérifier la séquence.','Simuler les indicateurs pour les codes corrects et incorrects.','Déboguer la logique en contrôlant l’état du programme et les sorties.'],learning:'Comprendre comment les instructions assembleur, les broches d’entrée/sortie et la logique numérique s’assemblent dans une application de contrôle embarqué.',note:'Projet réalisé en simulation ; aucun dispositif physique ne doit être revendiqué.'},
+'snake':{status:'Réalisé · Projet en binôme',lead:'Jeu Snake en console développé en binôme en C et avec Code::Blocks, avec gestion des collisions, score, rejouabilité, niveaux de difficulté et obstacles.',why:'Ce projet pratique m’a permis de consolider mes bases en programmation et de diviser un problème en fonctions plus petites, testables et maintenables.',skills:['Programmation C','Fonctions et code modulaire','Tableaux et pointeurs','Débogage','Travail en binôme'],approach:['Planifier la boucle de jeu, les déplacements du serpent et les règles.','Séparer les tâches en fonctions et organiser les fichiers source.','Implémenter les collisions, le score, les obstacles et les difficultés.','Tester les cas limites et corriger les problèmes.'],learning:'Structurer un programme, utiliser tableaux et pointeurs, déboguer la logique et collaborer avec un coéquipier.',note:'Projet en binôme. La description se limite aux fonctionnalités effectivement réalisées.'},
+'student-net':{status:'Réalisé · Projet en équipe',lead:'Projet d’équipe autour d’un concept de plateforme communautaire étudiante pour les opportunités académiques et professionnelles, la productivité et l’entraide.',why:'Je souhaitais réfléchir à un besoin réel des étudiants et à la manière dont un produit numérique pourrait regrouper des services utiles. Ma contribution portait sur le concept et la réflexion produit, et non sur une prétention à avoir développé toute l’application.',skills:['Réflexion produit','Identification des besoins','Travail d’équipe','Planification des fonctionnalités','Communication'],approach:['Identifier les difficultés étudiantes auxquelles la plateforme pourrait répondre.','Proposer des fonctionnalités autour de la communauté, des opportunités et de la productivité.','Structurer le concept avec l’équipe et clarifier sa valeur pour les utilisateurs.','Examiner l’expérience proposée et les pistes d’amélioration.'],learning:'Définir un produit numérique à partir des besoins des utilisateurs, contribuer à un projet collectif et communiquer une idée clairement.',note:'Projet d’équipe. Décrire précisément sa contribution personnelle.'},
+'visionspin':{status:'Projet envisagé',lead:'Je souhaite construire un écran LED rotatif affichant du texte et des animations simples en synchronisant les motifs lumineux avec la rotation.',why:'Cette idée associe un résultat visuel intéressant à de vrais défis d’ingénierie : temporisation, mesure de vitesse, synchronisation et commande du moteur.',skills:['C/C++','Arduino ou STM32','Timers et interruptions','Capteur à effet Hall','Commande des LED','Commande moteur'],approach:['Construire un petit ensemble de LED et afficher un motif fixe.','Ajouter un capteur de position et synchroniser l’affichage à chaque rotation.','Mesurer la vitesse et ajuster la temporisation.','Tester la stabilité de l’image puis ajouter du texte ou des animations.'],learning:'Comprendre l’effet de la précision temporelle et du retour capteur sur l’affichage, puis mesurer et améliorer sa stabilité.',note:'Idée future. Les composants, le coût et la conception mécanique seront définis après une étude de faisabilité.'},
+'biogrip':{status:'Projet envisagé',lead:'Je souhaite concevoir une main robotisée simple dont les doigts répondent à l’activité musculaire mesurée par un capteur EMG de surface placé sur l’avant-bras.',why:'Ce projet relie électronique, traitement du signal et robotique. Je m’intéresse particulièrement au passage d’un signal biologique bruité à un mouvement contrôlé.',skills:['Module EMG de surface','Conditionnement analogique','Filtrage et détection d’enveloppe','CAN / ADC','C/C++','Servomoteurs'],approach:['Construire une main articulée simple avec quelques doigts commandés par servomoteurs.','Acquérir le signal EMG avec un module conçu pour la mesure de surface.','Filtrer le signal et calibrer le repos et plusieurs niveaux de contraction.','Associer l’activité mesurée au mouvement, puis tester la réponse et la répétabilité.'],learning:'Traiter des signaux capteurs bruités, calibrer une mesure et la transformer en commande. Le prototype resterait expérimental et ne serait pas un dispositif médical.',note:'Idée future. Utiliser un module EMG conçu pour une mesure de surface sûre.'},
+'orbitlisten':{status:'Projet envisagé',lead:'Je souhaite mettre en place un petit récepteur radio logicielle (SDR) pour observer des signaux radio réels, explorer leur spectre et, si possible, recevoir certains signaux satellitaires accessibles.',why:'Les communications spatiales et satellitaires m’intéressent. Ce projet permettrait de relier cet intérêt à des mesures radio pratiques et au traitement numérique du signal.',skills:['Récepteur RTL-SDR ou similaire','Bases d’antenne','Fondamentaux RF','GNU Radio','Python / NumPy / SciPy','FFT et spectrogrammes'],approach:['Choisir un SDR abordable et une antenne adaptée à une bande de fréquence accessible légalement.','Installer le logiciel de réception et régler fréquence, gain et bande passante.','Enregistrer les signaux et examiner spectres et spectrogrammes.','Explorer le filtrage ou la démodulation, puis tenter une réception satellitaire adaptée si possible.'],learning:'Comprendre les signaux réels, l’influence des réglages de réception et l’apport du traitement numérique pour caractériser un signal.',note:'Idée future. Se limiter aux signaux qu’il est légal et approprié de recevoir et décoder.'},
+'chargesense':{status:'Projet envisagé',lead:'Je souhaite identifier l’état de fonctionnement d’un appareil basse tension en analysant sa signature électrique, par exemple son courant selon différents modes.',why:'C’est un problème pratique d’instrumentation : je veux voir si des motifs dans les mesures peuvent révéler l’état d’un appareil.',skills:['Mesure de courant et tension','Conditionnement analogique','CAN et échantillonnage','Extraction de caractéristiques','C/C++','Python ou MATLAB'],approach:['Commencer avec une charge basse tension, comme un petit moteur à courant continu.','Collecter des mesures de courant pour plusieurs états connus.','Calculer des caractéristiques simples : moyenne, variation et pics transitoires.','Créer un classificateur simple et mesurer sa précision sur des données de test.'],learning:'Collecter des mesures fiables, sélectionner des caractéristiques utiles et évaluer un classificateur avec des données réelles.',note:'Idée future. Commencer en basse tension ; toute mesure secteur ultérieure nécessite un équipement adapté, certifié et isolé.'},
+'pipeear':{status:'Projet envisagé',lead:'Je souhaite tester si les vibrations mesurées sur une petite canalisation peuvent distinguer un écoulement normal d’une fuite contrôlée dans un montage de laboratoire.',why:'Je trouve intéressant d’utiliser un capteur pour étudier un phénomène difficile à évaluer uniquement à l’œil. C’est aussi une occasion d’explorer l’acoustique et l’analyse du signal.',skills:['Capteur piézoélectrique ou accéléromètre','Amplification analogique','Échantillonnage','FFT et filtrage','Python / MATLAB','Tests expérimentaux'],approach:['Construire un montage de canalisation contrôlé et fixer un capteur de vibration ou de contact.','Enregistrer des signaux de référence et plusieurs conditions répétables.','Comparer les signaux dans les domaines temporel et fréquentiel.','Tester une règle de détection simple et mesurer les fausses alertes.'],learning:'Comprendre l’effet du placement du capteur, du débit et du bruit sur les mesures, et l’importance de tests répétables.',note:'Idée future. L’objectif initial est une preuve de concept contrôlée, pas une détection universelle des fuites.'},
+'wattwise':{status:'Projet envisagé',lead:'Je souhaite construire un petit système de suivi énergétique pour mesurer ou estimer la consommation et comparer plusieurs conditions de fonctionnement.',why:'L’énergie électrique est directement liée à mes études en 3EA. Je veux comprendre les mesures et les utiliser pour expliquer où l’énergie est consommée.',skills:['Mesure de tension et courant','Calcul de puissance et d’énergie','Microcontrôleur ou interface de compteur','Enregistrement de données','Python / MATLAB','Visualisation'],approach:['Choisir une charge basse tension sûre ou un compteur certifié avec interface de données.','Collecter les mesures dans le temps et calculer l’énergie utilisée.','Comparer les conditions de fonctionnement et tracer les résultats.','Ajouter un résumé ou une alerte si les données montrent une variation pertinente.'],learning:'Distinguer puissance et énergie, comprendre l’effet de la qualité des mesures et transformer les relevés en comparaisons utiles.',note:'Idée future. Les mesures secteur exigent un équipement correctement dimensionné et isolé.'},
+'linebot':{status:'Projet envisagé',lead:'Je souhaite construire un robot à deux roues qui suit une ligne grâce à des capteurs infrarouges, puis améliorer sa vitesse et son suivi avec une commande en boucle fermée.',why:'C’est une manière concrète d’observer l’automatique : le robot mesure sa position par rapport à la ligne, calcule une erreur et ajuste continuellement ses moteurs.',skills:['Arduino ou STM32','C/C++','Capteurs infrarouges de réflexion','PWM et pont en H','Codeurs de roues','Commande P / PID'],approach:['Assembler un petit châssis à deux roues et tester séparément capteurs et moteurs.','Programmer une première logique de suivi de ligne.','Ajuster la réponse sur les lignes droites et les courbes, en mesurant les résultats.','Si la base est fiable, ajouter un retour de vitesse et essayer une commande proportionnelle ou PID.'],learning:'Comprendre l’influence des capteurs, des moteurs et du réglage du contrôleur sur la stabilité, et comparer les performances avec des tests reproductibles.',note:'Idée future. Commencer par un robot fiable avant d’ajouter des codeurs ou une commande avancée.'}
+};
+const languageToggle=document.getElementById('languageToggle');
+let currentLanguage='en';
+const originalTexts=new WeakMap();
+const originalAttributes=new WeakMap();
+const translatedAttributes=['aria-label','title','alt','placeholder','content'];
+function translateNode(node,toFrench){
+ if(node.nodeType===Node.TEXT_NODE){
+  const original=node.nodeValue;
+  if(!original.trim())return;
+  if(!originalTexts.has(node))originalTexts.set(node,original);
+  const saved=originalTexts.get(node);
+  const key=saved.trim();
+  node.nodeValue=toFrench&&translations[key] ? saved.replace(key,translations[key]) : saved;
+  return;
+ }
+ if(node.nodeType!==Node.ELEMENT_NODE || ['SCRIPT','STYLE'].includes(node.tagName))return;
+ for(const attr of translatedAttributes){
+  if(!node.hasAttribute(attr))continue;
+  let saved=originalAttributes.get(node);
+  if(!saved){saved={};originalAttributes.set(node,saved);}
+  if(!(attr in saved))saved[attr]=node.getAttribute(attr);
+  const original=saved[attr];
+  node.setAttribute(attr,toFrench&&translations[original] ? translations[original] : original);
+ }
+ for(const child of [...node.childNodes])translateNode(child,toFrench);
+}
+function updateProjectCount(){
+ const visible=[...document.querySelectorAll('.project-card')].filter(card=>!card.hidden).length;
+ const count=document.getElementById('projectCount');
+ if(count)count.textContent=currentLanguage==='fr' ? `${visible} ${visible===1?'PROJET':'PROJETS'}` : `${visible} PROJECT${visible===1?'':'S'}`;
+}
+function setLanguage(lang){
+ currentLanguage=lang;
+ document.documentElement.lang=lang;
+ translateNode(document.documentElement,lang==='fr');
+ languageToggle.textContent=lang==='en'?'FR':'EN';
+ languageToggle.setAttribute('aria-label',lang==='en'?'Passer en français':'Passer en anglais');
+ document.querySelectorAll('.menu-toggle').forEach(b=>{b.setAttribute('aria-label',lang==='fr'?'Ouvrir le menu de navigation':'Open navigation menu');});
+ updateProjectCount();
+ const dialog=document.getElementById('projectDialog');
+ if(dialog.open){const id=dialog.dataset.projectId;if(id)openProject(id);}
+}
+languageToggle.addEventListener('click',()=>setLanguage(currentLanguage==='en'?'fr':'en'));
+</script>
+</body>
+</html>
