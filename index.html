@@ -2106,7 +2106,7 @@ const translations = {
 'Exploring':'À la découverte de','Electronics and Electrical Engineering.':'l’électronique et du génie électrique.',
 'Aymen El Mghaimimi · Toulouse INP–ENSEEIHT · 3EA':'Aymen El Mghaimimi · Toulouse INP–ENSEEIHT · 3EA',
 'I am building a strong technical foundation through engineering coursework, practical projects and continuous learning. I am interested in understanding how electronic systems, software and energy technologies work together to solve real-world problems.':'Je construis de solides bases techniques grâce aux cours d’ingénierie, aux projets pratiques et à l’apprentissage continu. Je m’intéresse à la manière dont les systèmes électroniques, les logiciels et les technologies de l’énergie fonctionnent ensemble pour résoudre des problèmes concrets.',
-'Explore my projects':'Découvrir mes projets','Get in touch':'Me contacter','About':'À propos','Education':'Formation','Projects':'Projets','Skills':'Compétences','Career':'Parcours','Contact':'Contact','Currently studying':'En cours d’apprentissage','Activities':'Activités','Video':'Vidéo','Menu':'Menu','journey.':'parcours.','Journey':'Parcours','journey':'parcours',
+'Explore my projects':'Découvrir mes projets','Get in touch':'Me contacter','About':'À propos','Education':'Formation','Projects':'Projets','Skills':'Compétences','Career':'Parcours','Contact':'Contact','Currently studying':'En cours d’apprentissage','Activities':'Activités','Video':'Vidéo','Menu':'Menu','journey.':'académique.','Journey':'Parcours','journey':'parcours',
 'Building a foundation in ':'Construire des bases en ','engineering.':'ingénierie.','I am an engineering student at Toulouse INP–ENSEEIHT, in the Electronics, Electrical Energy and Automatic Control department (3EA). My academic background in electrical engineering has given me a foundation in electronics, electrical systems, programming and automation.':'Je suis étudiant ingénieur à Toulouse INP–ENSEEIHT, au département Électronique, Énergie électrique et Automatique (3EA). Mon parcours en génie électrique m’a apporté des bases en électronique, systèmes électriques, programmation et automatisme.',
 'Technical curiosity':'Curiosité technique','I enjoy understanding how electronic hardware, embedded software and control systems work together to create reliable engineering solutions.':'J’aime comprendre comment le matériel électronique, les logiciels embarqués et les systèmes de commande fonctionnent ensemble pour créer des solutions fiables.','Learning by building':'Apprendre en réalisant','I learn by turning concepts into working systems, testing ideas through simulation and improving designs step by step.':'J’apprends en transformant des concepts en systèmes fonctionnels, en testant des idées par simulation et en améliorant les conceptions étape par étape.',
 'My academic ':'Mon parcours ','path.':'académique.','A progression from physical sciences to electrical engineering and a broader engineering curriculum.':'Un parcours des sciences physiques au génie électrique, puis vers une formation d’ingénieur plus large.','Engineering cycle. Building skills in electronics, electrical engineering, automation, computer systems, signal processing and applied mathematics.':'Cycle ingénieur. Développement de compétences en électronique, génie électrique, automatisme, systèmes informatiques, traitement du signal et mathématiques appliquées.','Bachelor’s Degree in Electronics and Electrical Engineering':'Licence en électronique et génie électrique','Faculty of Sciences Aïn Chock (FSAC), Hassan II University of Casablanca (UH2C), Morocco · EEAI (Electrical Engineering, Electronics, Automatic Control and Industrial Computing).':'Faculté des sciences Aïn Chock (FSAC), Université Hassan II de Casablanca (UH2C), Maroc · EEAI (électrotechnique, électronique, automatique et informatique industrielle).','DEUG in Physical Sciences, providing a foundation in mathematics, physics and scientific methods.':'DEUG en sciences physiques, apportant des bases en mathématiques, physique et méthodes scientifiques.','Scientific Baccalaureate, Physics and Chemistry.':'Baccalauréat scientifique, physique-chimie.',
@@ -2374,7 +2374,16 @@ function translateNode(node,toFrench){
   if(!originalTexts.has(node))originalTexts.set(node,original);
   const saved=originalTexts.get(node);
   const key=saved.trim();
-  node.nodeValue=toFrench&&translations[key] ? saved.replace(key,translations[key]) : saved;
+  // Keep split headings grammatically correct in French.
+  const heading=node.parentElement && node.parentElement.tagName==='H2' ? node.parentElement : null;
+  const section=heading ? heading.closest('section') : null;
+  if(toFrench && heading && section && section.id==='presentation-video' && key==='My'){
+   node.nodeValue=saved.replace(key,'Ma');
+  } else if(toFrench && heading && key==='My academic'){
+   node.nodeValue=saved.replace(key,'Mon parcours');
+  } else {
+   node.nodeValue=toFrench&&translations[key] ? saved.replace(key,translations[key]) : saved;
+  }
   return;
  }
  if(node.nodeType!==Node.ELEMENT_NODE || ['SCRIPT','STYLE'].includes(node.tagName))return;
